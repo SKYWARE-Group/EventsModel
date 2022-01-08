@@ -2,24 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Skyware.Lis.EventsModel
+namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Instrument makes query for a test selection by SampleId (barcode)
+    /// Represents sample in communication with instruments
     /// </summary>
-    public class InstrumentSampleQuery : BaseMessage
+    public class Sample
     {
-
-        /// <summary>
-        /// Id of the instrument which makes query as it is defined in target LIS
-        /// </summary>
-        public string InstrumentId { get; set; }
-
-        /// <summary>
-        /// Name of the instrument which makes query as it is defined in target LIS
-        /// </summary>
-        public string InstrumentName { get; set; }
 
         /// <summary>
         /// SampleId (barcode) of a tube or vessel
@@ -27,7 +17,7 @@ namespace Skyware.Lis.EventsModel
         public string SampleId { get; set; }
 
         /// <summary>
-        /// Disk or rack identifier where sample is found
+        /// Disk or rack identifier where sample is found in givent instrument
         /// </summary>
         public string DiskOrRackId { get; set; }
 
@@ -40,6 +30,16 @@ namespace Skyware.Lis.EventsModel
         /// Sequence number or any other identifier by which sample is known in the quering instrument
         /// </summary>
         public string InstrumentSampleId { get; set; }
+
+        /// <summary>
+        /// Code of the sample type a it is known to the instrument
+        /// </summary>
+        public string InstrumentCode { get; set; }
+
+        /// <summary>
+        /// Date of time when the sample is taken
+        /// </summary>
+        public DateTime? Taken { get; set; }
 
 
     }
