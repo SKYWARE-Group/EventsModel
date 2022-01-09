@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Mikhail Kalatchev</Authors>
+    <PackageId>Skyware.Lis.$(AssemblyName)</PackageId>
+    <Company>SKYWARE Group</Company>
+    <Product>LIS iLab</Product>
+    <Description>Data model of LIS iLab event system</Description>
+    <Copyright>Copyright (C) 2022, SKYWARE Group</Copyright>
+    <PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>iLab</PackageTags>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <FileVersion>0.0.1.0</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
 </Project>

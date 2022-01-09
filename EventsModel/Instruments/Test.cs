@@ -26,6 +26,11 @@ namespace Skyware.Lis.EventsModel.Instruments
         /// </summary>
         public string InstrumentCode { get; set; }
 
+        /// <summary>
+        /// Represents discriminator of the test code
+        /// </summary>
+        public string CodeModifier { get; set; }
+
     }
 
 }
