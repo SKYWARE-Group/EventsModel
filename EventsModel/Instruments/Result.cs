@@ -6,10 +6,12 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Occurs when results is received from a instrument
+    /// Occurs when results is received from a instrument (topic://instruments/results)
     /// </summary>
     public class Result : BaseMessage
     {
+
+        public override string DefaultAddress => "topic://instruments/results";
 
         /// <summary>
         /// Instrument

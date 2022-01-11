@@ -6,10 +6,12 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Occurs when instrument queries test selection by SampleId (barcode)
+    /// Occurs when instrument queries test selection by SampleId (barcode) (topic://instruments/queries)
     /// </summary>
     public class Query : BaseMessage
     {
+
+        public override string DefaultAddress => "topic://instruments/queries";
 
         /// <summary>
         /// Instrument

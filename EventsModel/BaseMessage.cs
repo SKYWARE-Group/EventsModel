@@ -10,6 +10,11 @@ namespace Skyware.Lis.EventsModel
     {
 
         /// <summary>
+        /// Default addres where message should be send
+        /// </summary>
+        public abstract string DefaultAddress { get; }
+
+        /// <summary>
         /// Id of the message, GUID
         /// </summary>
         public string Id { get; set; } = Guid.NewGuid().ToString();
