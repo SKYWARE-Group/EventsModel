@@ -13,6 +13,9 @@ namespace Skyware.Lis.EventsModel.Payments
     public class Payment : BaseMessage
     {
 
+        /// <summary>
+        /// Default address where messages are produced
+        /// </summary>
         public override string DefaultAddress => "topic://payments";
 
         /// <summary>
@@ -21,7 +24,7 @@ namespace Skyware.Lis.EventsModel.Payments
         public string PaymentId { get; set; }
 
         /// <summary>
-        /// Type of payment
+        /// Type of payment (<see cref="PaymentType"/>
         /// </summary>
         public PaymentType PaymentType { get; set; } 
 

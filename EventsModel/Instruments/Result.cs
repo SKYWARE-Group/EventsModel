@@ -6,27 +6,30 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Event. Occurs when results is received from an instrument 
+    /// Event. Occurs when results is received from an <see cref="Instrument"/> 
     /// Default address: topic://instruments/results
     /// </summary>
     [Event("topic://instruments/results")]
     public class Result : BaseMessage
     {
 
+        /// <summary>
+        /// Default address where messages are produced
+        /// </summary>
         public override string DefaultAddress => "topic://instruments/results";
 
         /// <summary>
-        /// Instrument from which the result is received
+        /// <see cref="Instrument"/> from which the result is received
         /// </summary>
         public Instrument Instrument { get; set; }
 
         /// <summary>
-        /// Sample being tested
+        /// <see cref="Sample"/> being tested
         /// </summary>
         public Sample Sample { get; set; }
 
         /// <summary>
-        /// Examination results
+        /// Examination results (<see cref="ResultData"/>)
         /// </summary>
         public ResultData Data { get; set; }
 

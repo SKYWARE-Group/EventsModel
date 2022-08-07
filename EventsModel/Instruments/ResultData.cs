@@ -12,7 +12,7 @@ namespace Skyware.Lis.EventsModel.Instruments
     {
 
         /// <summary>
-        /// Resolved test
+        /// Resolved <see cref="Test"/>
         /// </summary>
         public Test Test { get; set; }
 

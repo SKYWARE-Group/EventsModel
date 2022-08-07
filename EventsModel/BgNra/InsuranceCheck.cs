@@ -13,6 +13,9 @@ namespace Skyware.Lis.EventsModel.BgNra
     public class InsuranceCheck : BaseMessage
     {
 
+        /// <summary>
+        /// Default address where messages are produced
+        /// </summary>
         public override string DefaultAddress => "topic://bg-nra/insurance";
 
         /// <summary>
