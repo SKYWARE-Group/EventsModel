@@ -6,7 +6,7 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Represents sample in communication with instruments
+    /// Represents sample in communication with the instruments
     /// </summary>
     public class Sample
     {

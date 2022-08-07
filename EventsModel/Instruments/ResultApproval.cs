@@ -6,25 +6,27 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Occurs when test result is approved and sent to LIS (topic://instruments/result-approvals)
+    /// Event. Occurs when test result is approved and sent to LIS
+    /// Default address: topic://instruments/result-approvals
     /// </summary>
+    [Event("topic://instruments/result-approvals")]
     public class ResultApproval : BaseMessage
     {
 
         public override string DefaultAddress => "topic://instruments/result-approvals";
 
         /// <summary>
-        /// Instrument
+        /// Instrument from which the results are received
         /// </summary>
         public Instrument Instrument { get; set; }
 
         /// <summary>
-        /// Sample
+        /// Sample being tested and approved
         /// </summary>
         public Sample Sample { get; set; }
 
         /// <summary>
-        /// Test data
+        /// Examination results being validated
         /// </summary>
         public ResultData Data { get; set; }
 

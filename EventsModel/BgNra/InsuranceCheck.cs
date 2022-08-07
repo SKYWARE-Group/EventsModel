@@ -6,20 +6,22 @@ namespace Skyware.Lis.EventsModel.BgNra
 {
 
     /// <summary>
-    /// Occurs when Health Insurance (Bulgaria, Nra) is checked (topic://bg-nra/insurance)
+    /// Event. Occurs when Health Insurance (Bulgaria, Nra) is checked 
+    /// Default address: topic://bg-nra/insurance
     /// </summary>
+    [Event("topic://bg-nra/insurance")]
     public class InsuranceCheck : BaseMessage
     {
 
         public override string DefaultAddress => "topic://bg-nra/insurance";
 
         /// <summary>
-        /// Visit to which the patient is associated in thi check
+        /// Visit to which the patient is associated in the check
         /// </summary>
         public int VisitId { get; set; }
 
         /// <summary>
-        /// Patient identifier type, according to iLab
+        /// Patient identifier type, according to LIS iLab
         /// </summary>
         public int PidType { get; set; }
 
@@ -39,10 +41,9 @@ namespace Skyware.Lis.EventsModel.BgNra
         public string StatusText { get; set; }
 
         /// <summary>
-        /// Base64 encoded answer from NRZ
+        /// Base64 encoded answer from the NRA service
         /// </summary>
         public string OriginalFile { get; set; }
-
 
     }
 

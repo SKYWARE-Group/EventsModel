@@ -2,20 +2,22 @@
 {
 
     /// <summary>
-    /// Occurs when LIS sends a sample order to a instrument (topic://instruments/orders)
+    /// Event. Occurs when LIS sends a sample order to an instrument
+    /// Default address: topic://instruments/orders
     /// </summary>
+    [Event("topic://instruments/orders")]
     public class Order : BaseMessage
     {
 
         public override string DefaultAddress => "topic://instruments/orders";
 
         /// <summary>
-        /// Instrument
+        /// Instrument to which the order is sent
         /// </summary>
         public Instrument Instrument { get; set; }
 
         /// <summary>
-        /// Sample
+        /// Ordered sample
         /// </summary>
         public Sample Sample { get; set; }
 

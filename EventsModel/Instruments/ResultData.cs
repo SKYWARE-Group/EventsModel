@@ -6,7 +6,7 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Represents test result data
+    /// Represents examination result data
     /// </summary>
     public class ResultData
     {
