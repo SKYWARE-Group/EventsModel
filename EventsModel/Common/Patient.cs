@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Skyware.Lis.EventsModel.Visits
+namespace Skyware.Lis.EventsModel.Common
 {
 
     /// <summary>
     /// Represent a patient (human, animal, etc.)
     /// </summary>
-    public class Patient
+    public class Patient : Person
     {
 
         /// <summary>
@@ -25,21 +25,6 @@ namespace Skyware.Lis.EventsModel.Visits
         /// Indentifier of the, such as SSN, EGN, etc.
         /// </summary>
         public string NationalIdentifer { get; set; }
-
-        /// <summary>
-        /// First (given) name
-        /// </summary>
-        public string GivenName { get; set; }
-
-        /// <summary>
-        /// Second name or initials
-        /// </summary>
-        public string MiddleName { get; set; }
-
-        /// <summary>
-        /// Last (family) name
-        /// </summary>
-        public string FamilyName { get; set; }
 
         /// <summary>
         /// Date of birth

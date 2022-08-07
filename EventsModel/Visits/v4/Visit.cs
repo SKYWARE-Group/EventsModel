@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Skyware.Lis.EventsModel.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

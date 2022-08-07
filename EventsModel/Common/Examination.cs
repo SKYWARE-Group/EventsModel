@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Skyware.Lis.EventsModel.Visits
+namespace Skyware.Lis.EventsModel.Common
 {
 
     /// <summary>
@@ -32,4 +32,5 @@ namespace Skyware.Lis.EventsModel.Visits
         public bool IsPanel { get; set; }
 
     }
+
 }
