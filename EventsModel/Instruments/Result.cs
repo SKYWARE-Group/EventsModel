@@ -9,7 +9,6 @@ namespace Skyware.Lis.EventsModel.Instruments
     /// Event. Occurs when results is received from an <see cref="Instrument"/> 
     /// Default address: topic://instruments/results
     /// </summary>
-    [Event("topic://instruments/results")]
     public class Result : BaseMessage
     {
 

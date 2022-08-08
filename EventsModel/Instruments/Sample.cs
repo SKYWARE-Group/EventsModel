@@ -17,7 +17,7 @@ namespace Skyware.Lis.EventsModel.Instruments
         public string SampleId { get; set; }
 
         /// <summary>
-        /// Disk or rack identifier where sample is found in givent instrument
+        /// Disk or rack identifier where sample is found in given instrument
         /// </summary>
         public string DiskOrRackId { get; set; }
 

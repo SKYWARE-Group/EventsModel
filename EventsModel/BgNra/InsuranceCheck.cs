@@ -9,7 +9,6 @@ namespace Skyware.Lis.EventsModel.BgNra
     /// Event. Occurs when Health Insurance (Bulgaria, Nra) is checked 
     /// Default address: topic://bg-nra/insurance
     /// </summary>
-    [Event("topic://bg-nra/insurance")]
     public class InsuranceCheck : BaseMessage
     {
 

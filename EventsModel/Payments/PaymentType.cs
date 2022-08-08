@@ -12,7 +12,7 @@ namespace Skyware.Lis.EventsModel.Payments
     {
 
         /// <summary>
-        /// Identifier of the type accoring to LIS iLab
+        /// Identifier of the type according to LIS iLab
         /// </summary>
         public int Id { get; set; }  
 

@@ -5,7 +5,6 @@
     /// Event. Occurs when LIS sends a sample order to an <see cref="Instrument"/>
     /// Default address: topic://instruments/orders
     /// </summary>
-    [Event("topic://instruments/orders")]
     public class Order : BaseMessage
     {
 

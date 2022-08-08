@@ -9,7 +9,6 @@ namespace Skyware.Lis.EventsModel.Payments
     /// Event. Occurs when a payment is made 
     /// Default address: topic://instruments/queries
     /// </summary>
-    [Event("topic://payments")]
     public class Payment : BaseMessage
     {
 
@@ -29,9 +28,14 @@ namespace Skyware.Lis.EventsModel.Payments
         public PaymentType PaymentType { get; set; } 
 
         /// <summary>
-        /// The amount. Negative values represents refunds
+        /// The amount. Negative values represent refunds
         /// </summary>
-        public decimal Amount { get; set; }    
+        public decimal Amount { get; set; }  
+        
+        /// <summary>
+        /// <see cref="Receipt"/> from fiscal device, if such is printed
+        /// </summary>
+        public Receipt Receipt { get; set; }
 
 
     }

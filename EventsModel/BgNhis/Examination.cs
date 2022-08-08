@@ -7,7 +7,7 @@ namespace Skyware.Lis.EventsModel.BgNhis
 {
 
     /// <summary>
-    /// Exmamination, ordered with Bulgarian NHIS <see cref="Referral"/>
+    /// Examination, order with Bulgarian NHIS <see cref="Referral"/>
     /// </summary>
     public class NhisExamination
     {

@@ -7,7 +7,7 @@ namespace Skyware.Lis.EventsModel.BgNhis
 {
 
     /// <summary>
-    /// Doctor, according to Bulgarian regulations
+    /// Doctor, according to Bulgarian regulations (inherits <see cref="Doctor"/>)
     /// </summary>
     public class BgDoctor : Doctor
     {

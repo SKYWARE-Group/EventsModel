@@ -12,7 +12,7 @@ namespace Skyware.Lis.EventsModel.Instruments
     {
 
         /// <summary>
-        /// Test Id as it is knwon in target LIS
+        /// Test Id as it is known in target LIS
         /// </summary>
         public string TestId { get; set; }
 

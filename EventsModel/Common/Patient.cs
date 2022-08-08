@@ -6,7 +6,7 @@ namespace Skyware.Lis.EventsModel.Common
 {
 
     /// <summary>
-    /// Represent a patient (human, animal, etc.)
+    /// Represent a patient (human, animal, etc., inherits <see cref="Person"/>)
     /// </summary>
     public class Patient : Person
     {
@@ -17,14 +17,19 @@ namespace Skyware.Lis.EventsModel.Common
         public int Id { get; set; }
 
         /// <summary>
-        /// Type of well-known identifier of the patient
+        /// Type Id in LIS iLab
         /// </summary>
-        public string NationalIdentifierType { get; set; }
+        public string IdentifierTypeId { get; set; }
 
         /// <summary>
-        /// Indentifier of the, such as SSN, EGN, etc.
+        /// Type of well-known identifier of the patient
         /// </summary>
-        public string NationalIdentifer { get; set; }
+        public string IdentifierType { get; set; }
+
+        /// <summary>
+        /// Identifier of the, such as SSN, EGN, etc.
+        /// </summary>
+        public string Identifer { get; set; }
 
         /// <summary>
         /// Date of birth
@@ -32,12 +37,12 @@ namespace Skyware.Lis.EventsModel.Common
         public DateTime? DateOfBirth { get; set; }
 
         /// <summary>
-        /// False if date of birth is known, otherwise false (for calculation of age)
+        /// False if date of birth is known, otherwise true (for calculation of age)
         /// </summary>
         public bool IsDobApproximate { get; set; }
 
         /// <summary>
-        /// True if man, false if woman and null for unknwon/non binary
+        /// Three-state gender indicator: true if man, false if woman and null for unknown/non binary
         /// </summary>
         public bool? IsMale { get; set; }
 

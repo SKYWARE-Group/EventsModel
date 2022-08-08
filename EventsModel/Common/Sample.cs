@@ -17,12 +17,17 @@ namespace Skyware.Lis.EventsModel.Common
         public string Barcode { get; set; }
 
         /// <summary>
-        /// Code (usially LOINC) of the sample (sample type)
+        /// LOINC of the sample (sample type)
         /// </summary>
-        public string TypeCode { get; set; }
+        public string LoincCode { get; set; }
 
         /// <summary>
-        /// Date and time sample has been taken
+        /// Laboratory wide code for sample type, printed on the tube
+        /// </summary>
+        public string LaboratoryCode { get; set; }
+
+        /// <summary>
+        /// The date and time the sample has been taken
         /// </summary>
         public DateTime? Taken { get; set; }
 

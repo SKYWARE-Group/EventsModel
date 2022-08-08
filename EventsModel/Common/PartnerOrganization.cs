@@ -6,9 +6,9 @@ namespace Skyware.Lis.EventsModel.Common
 {
 
     /// <summary>
-    /// Represent medical doctor (inherits <see cref="Person"/>)
+    /// Represents partner organization - Insurance fund, Clinic or medicalpractice
     /// </summary>
-    public class Doctor : Person
+    public class PartnerOrganization
     {
 
         /// <summary>
@@ -17,12 +17,10 @@ namespace Skyware.Lis.EventsModel.Common
         public int Id { get; set; }
 
         /// <summary>
-        /// Professional identifier issued by national or local authorities
+        /// Name of organization
         /// </summary>
-        public string Identifier { get; set; }
-
+        public string Name { get; set; }
 
     }
-
 
 }

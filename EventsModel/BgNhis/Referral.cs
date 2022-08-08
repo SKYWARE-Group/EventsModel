@@ -13,6 +13,11 @@ namespace Skyware.Lis.EventsModel.BgNhis
     {
 
         /// <summary>
+        /// Identifier in the LIS iLab (null if it is never imported)
+        /// </summary>
+        public int? Id { get; set; }
+
+        /// <summary>
         /// Unique identifier of the referral in Bulgarian NHIS
         /// </summary>
         public string Nrn { get; set; }
@@ -23,7 +28,7 @@ namespace Skyware.Lis.EventsModel.BgNhis
         public string Lrn { get; set; }
 
         /// <summary>
-        /// The Rila channel, the referral is read, locked or unlocked (null if Arda is used)
+        /// The Rila channel the referral is read, locked or unlocked (null if Arda is used)
         /// </summary>
         public int? RilaId { get; set; }
 
@@ -31,6 +36,36 @@ namespace Skyware.Lis.EventsModel.BgNhis
         /// Date of issuance
         /// </summary>
         public DateTime Issued { get; set; }    
+
+        /// <summary>
+        /// Regulatory bound date which coresponds with NHIF reports (date of sampling)
+        /// </summary>
+        public DateTime VisitDate { get; set; }
+
+        /// <summary>
+        /// Regulatory bound date which coresponds with NHIF reports (date of results)
+        /// </summary>
+        public DateTime ExecutionDate { get; set; }
+
+        /// <summary>
+        /// RHIF region of the patient, accoring NHIF
+        /// </summary>
+        public string RhifRegion { get; set; }
+
+        /// <summary>
+        /// Health region if the patient, according to NHIF
+        /// </summary>
+        public string HealthRegion { get; set; }
+
+        /// <summary>
+        /// Payer institution, typed value, according to NHIS
+        /// </summary>
+        public int FinancingSource { get; set; }
+
+        /// <summary>
+        /// Patient's <see cref="Diagnosis"/> as a reason for referral issuance
+        /// </summary>
+        public Diagnosis Diagnosis { set; get; }
 
         /// <summary>
         /// <see cref="Patient"/> to which referral is issued
@@ -43,10 +78,14 @@ namespace Skyware.Lis.EventsModel.BgNhis
         public BgDoctor Issuer { get; set; }
 
         /// <summary>
-        /// Responsable dcotor (<see cref="BgDoctor"/>, the one who performes examinations)
+        /// <see cref="MedicalPractice"/> of the issuing doctor
+        /// </summary>
+        public MedicalPractice IssuerPractice  { get; set; }
+
+        /// <summary>
+        /// Responsable dcotor (<see cref="BgDoctor"/>, the one who is will perform examinations)
         /// </summary>
         public BgDoctor LaboratoryDoctor { get; set; }
-
 
         /// <summary>
         /// Collection of <see cref="NhisExamination"/>, ordered with this referral

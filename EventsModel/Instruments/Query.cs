@@ -6,10 +6,9 @@ namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
-    /// Event. Occurs when  <see cref="Instrument"/> queries test selection by SampleId (barcode) 
+    /// Event. Occurs when  <see cref="Instrument"/> queries test selection by Sample Id (barcode) 
     /// Default address: topic://instruments/queries
     /// </summary>
-    [Event("topic://instruments/queries")]
     public class Query : BaseMessage
     {
 

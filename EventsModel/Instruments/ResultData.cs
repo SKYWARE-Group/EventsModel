@@ -22,17 +22,17 @@ namespace Skyware.Lis.EventsModel.Instruments
         public string Reult { get; set; }
 
         /// <summary>
-        /// Deciamal value of the results, in case it is numeric value
+        /// Decimal value of the results, in case it is numeric value
         /// </summary>
         public decimal? DecResult { get; set; }
 
         /// <summary>
-        /// Comma separated flags, comming from the instrument
+        /// Comma separated flags, coming from the instrument
         /// </summary>
         public string InstrumentFlags { get; set; }
 
         /// <summary>
-        /// Valud based (iLab) flag according to reference ranges (see iLab docs)
+        /// Value based (iLab) flag according to reference ranges (see iLab docs)
         /// </summary>
         public int? Flag { get; set; }
 
