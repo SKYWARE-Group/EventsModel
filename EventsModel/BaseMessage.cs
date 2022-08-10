@@ -5,7 +5,9 @@ using System.Text;
 namespace Skyware.Lis.EventsModel
 {
 
-    //Base class for all messages produced by LIS iLab
+    /// <summary>
+    /// Base class for all messages produced by LIS iLab
+    /// </summary>
     public abstract class BaseMessage
     {
 

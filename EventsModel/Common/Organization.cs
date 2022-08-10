@@ -8,7 +8,7 @@ namespace Skyware.Lis.EventsModel.Common
     /// <summary>
     /// Represents partner organization - Insurance fund, Clinic or medicalpractice
     /// </summary>
-    public class PartnerOrganization
+    public class Organization
     {
 
         /// <summary>

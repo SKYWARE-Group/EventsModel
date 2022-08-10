@@ -9,7 +9,7 @@ namespace Skyware.Lis.EventsModel.BgNhis
     /// <summary>
     /// Represents medical practice, registered by Bulgarian regulations
     /// </summary>
-    public class MedicalPractice : PartnerOrganization
+    public class MedicalPractice : Organization
     {
 
         /// <summary>

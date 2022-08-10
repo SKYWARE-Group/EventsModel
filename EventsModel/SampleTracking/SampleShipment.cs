@@ -1,20 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Skyware.Lis.EventsModel.Common;
 
-namespace Skyware.Lis.EventsModel.Common
+namespace Skyware.Lis.EventsModel.SampleTracking
 {
 
     /// <summary>
-    /// Represents a set of samples, shich are transfered from one to another <see cref="Location"/>
+    /// Event. Occurs when set of samples is transfered from one to another <see cref="Location"/>
+    /// Deafualt address: topic://smp-tracking/shipment
     /// </summary>
-    public class SampleShipment
+    public class SampleShipment : BaseMessage
     {
+
+        /// <summary>
+        /// Default address where messages are produced
+        /// </summary>
+        public override string DefaultAddress => "topic://smp-tracking/shipment";
+
+        /// <summary>
+        /// True if shipment is sent, false if it is received
+        /// </summary>
+        public bool IsSent { get; set; }
 
         /// <summary>
         /// Identifier in the LIS iLab
         /// </summary>
-        public int Id { get; set; }
+        public int ShipmentId { get; set; }
 
         /// <summary>
         /// Sendning <see cref="Location"/>
@@ -39,7 +51,7 @@ namespace Skyware.Lis.EventsModel.Common
         /// <summary>
         /// Shipment's content
         /// </summary>
-        public IEnumerable<Sample> Samples { get; set; }    
+        public IEnumerable<Sample> Samples { get; set; }
 
     }
 
