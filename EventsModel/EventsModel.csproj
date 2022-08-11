@@ -20,13 +20,29 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<AssemblyName>Skyware.Lis.$(MSBuildProjectName)</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageIcon>EventSysIcon.png</PackageIcon>
+		<Title>LIS iLab Eevents Data Model</Title>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
+	  <Content Include="Assets\EventSysIcon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Assets\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
-		</None>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="Assets\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,6 +50,13 @@
 	    <PrivateAssets>all</PrivateAssets>
 	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Assets\EventSysIcon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
