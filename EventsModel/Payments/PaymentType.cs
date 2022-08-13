@@ -17,9 +17,14 @@ namespace Skyware.Lis.EventsModel.Payments
         public int Id { get; set; }  
 
         /// <summary>
-        /// Descriptive name
+        /// Descriptive name of the payment
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// If the payment is in cash
+        /// </summary>
+        public bool IsCash { get; set; }
 
     }
 

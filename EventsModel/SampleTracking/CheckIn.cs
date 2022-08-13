@@ -31,7 +31,7 @@ namespace Skyware.Lis.EventsModel.SampleTracking
         /// <summary>
         /// <see cref="Location"/> where operation is made
         /// </summary>
-        public Location Location { get; set; }
+        public Location TargetLocation { get; set; }
 
     }
 

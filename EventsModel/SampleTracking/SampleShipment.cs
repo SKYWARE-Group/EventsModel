@@ -49,7 +49,7 @@ namespace Skyware.Lis.EventsModel.SampleTracking
         public DateTime? Received { get; set; }
 
         /// <summary>
-        /// Shipment's content
+        /// Shipment's content (collection of <see cref="Sample"/>)
         /// </summary>
         public IEnumerable<Sample> Samples { get; set; }
 

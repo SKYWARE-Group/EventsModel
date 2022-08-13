@@ -23,6 +23,16 @@ namespace Skyware.Lis.EventsModel.Payments
         public string PaymentId { get; set; }
 
         /// <summary>
+        /// Sale to which payment is aasociated
+        /// </summary>
+        public int SaleId { get; set; }
+
+        /// <summary>
+        /// Shift on which the payment is made
+        /// </summary>
+        public Shift Shift { get; set; }
+
+        /// <summary>
         /// Type of payment (<see cref="PaymentType"/>
         /// </summary>
         public PaymentType PaymentType { get; set; } 
@@ -33,10 +43,14 @@ namespace Skyware.Lis.EventsModel.Payments
         public decimal Amount { get; set; }  
         
         /// <summary>
-        /// <see cref="Receipt"/> from fiscal device, if such is printed
+        /// <see cref="Receipt"/> from fiscal device, if such is printed on connected device
         /// </summary>
         public Receipt Receipt { get; set; }
 
+        /// <summary>
+        /// <see cref="CardTransaction"/>, if payment is made trough connected termianal
+        /// </summary>
+        public CardTransaction CardTransaction { get; set; }
 
     }
 
