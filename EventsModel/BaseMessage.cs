@@ -43,14 +43,14 @@ namespace Skyware.Lis.EventsModel
         public string OriginUserId { get; set; }
 
         /// <summary>
-        /// If LIS supports locations, <see cref="Location"/> where event is generated
-        /// </summary>
-        public string OriginLocation { get; set; }
-
-        /// <summary>
         /// Host name of a computer where message is generated (ussually it's NetBIOS name)
         /// </summary>
         public string OriginHost { get; set; }
+
+        /// <summary>
+        /// If LIS supports locations, <see cref="Location"/> where event is generated
+        /// </summary>
+        public Location OriginLocation { get; set; }
 
 
     }

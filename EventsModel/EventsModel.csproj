@@ -14,7 +14,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>iLab</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.1.0</Version>
+		<Version>0.1.1</Version>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
