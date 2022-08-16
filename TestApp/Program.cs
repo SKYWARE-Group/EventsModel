@@ -3,26 +3,19 @@ using Skyware.Lis.EventsModel;
 using System.Diagnostics;
 using System.Reflection;
 
-Console.WriteLine("Hello, World!");
 
-var pr = Process.GetCurrentProcess().MainModule.FileName;
-var fn = System.IO.Path.Combine(Path.GetDirectoryName(pr), "Skyware.Lis.EventsModel.dll");
-Assembly assembly = Assembly.LoadFile(fn);
-var allTypes = assembly.GetTypes();
-var bm = allTypes.FirstOrDefault(x => x.Name == "BaseMessage");
-foreach (Type x in assembly.GetTypes())
+string curLoc = System.Reflection.Assembly.GetExecutingAssembly().Location;
+var libFileName = System.IO.Path.Combine(Path.GetDirectoryName(curLoc), "Skyware.Lis.EventsModel.dll");
+Assembly libAssembly = Assembly.LoadFile(libFileName);
+var allAssemblyTypes = libAssembly.GetTypes();
+var baseMessageType = allAssemblyTypes.FirstOrDefault(x => x.Name == nameof(Skyware.Lis.EventsModel.BaseMessage));
+foreach (Type curType in libAssembly.GetTypes())
 {
     //Console.WriteLine(x.FullName);
-    if (x.GetType().IsSubclassOf(bm))
+    if (curType.IsSubclassOf(baseMessageType))
     {
-        Console.WriteLine(x.Name);
+        var obj = Activator.CreateInstance(curType);
+        var objVal = baseMessageType.InvokeMember(nameof(Skyware.Lis.EventsModel.BaseMessage.DefaultAddress), BindingFlags.GetProperty, null, obj, null);
+        Console.WriteLine($"{objVal}: {curType.Name}");
     }
 }
-//Console.WriteLine("");
-
-//string nspace = "Skyware.Lis.EventsModel.Instruments";
-
-//var q = from t in assembly.GetTypes()
-//        where t.IsClass && t.Namespace == nspace
-//        select t;
-//q.ToList().ForEach(t => Console.WriteLine(t.Name));
