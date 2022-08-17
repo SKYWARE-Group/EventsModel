@@ -12,4 +12,4 @@ Install-Package Skyware.Lis.EventsModel
 
 ## Notes
 
-Typical connection URL si like `activemq:failover:ssl://som-host.com:61616?transport.acceptInvalidBrokerCert=true`. Also you will need username and password to acces the ActiveMQ server. 
+Typical connection URL si like `activemq:failover:ssl://some-host.com:61616?transport.acceptInvalidBrokerCert=true`. Also you will need username and password to acces the ActiveMQ server. 
