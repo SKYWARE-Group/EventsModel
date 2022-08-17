@@ -4,6 +4,8 @@
 
 ## Usage 
 
+The easiest way is to get the library trough [NuGet package](https://www.nuget.org/packages/Skyware.Lis.EventsModel) like tnat:
+
 `
 Install-Package Skyware.Lis.EventsModel
 `
