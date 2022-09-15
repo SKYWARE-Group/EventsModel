@@ -12,7 +12,7 @@
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>iLab;QctiveMQ</PackageTags>
+		<PackageTags>iLab;ActiveMQ</PackageTags>
 		<SignAssembly>False</SignAssembly>
 		<Version>0.3.0</Version>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
