@@ -1,4 +1,6 @@
-﻿namespace Skyware.Lis.EventsModel.Instruments
+﻿using System.Collections.Generic;
+
+namespace Skyware.Lis.EventsModel.Instruments
 {
 
     /// <summary>
@@ -27,7 +29,7 @@
         /// <summary>
         /// Ordered items (Array of <see cref="Test"/>)
         /// </summary>
-        public Test[] Tests { get; set; }
+        public IEnumerable<Test> Tests { get; set; }
 
     }
 

@@ -16,7 +16,22 @@ namespace Skyware.Lis.EventsModel.Orders
         /// <summary>
         /// Id of the order in LIS iLab (Orders database)
         /// </summary>
-        public string OrderId { get; set; }
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Priority code (see <see cref="PriorityCodes"/>), compatable with HL7 table 0485 (Extended Priority Codes)
+        /// </summary>
+        public string PriorityCode { get; set; } = PriorityCodes.ROUTINE;
+
+        /// <summary>
+        /// If values is set (known), shows if order is addition to previously sent one 
+        /// </summary>
+        public bool? IsAddition { get; set; }
+
+        /// <summary>
+        /// Not null value indicates desired date and time of sample collection and execution
+        /// </summary>
+        public DateTime? ScheduledTime { get; set; } = null;
 
         /// <summary>
         /// <see cref="Patient"/> to which order is made
@@ -29,14 +44,9 @@ namespace Skyware.Lis.EventsModel.Orders
         public Organization Origin { get; set; }
 
         /// <summary>
-        /// Priority code (see <see cref="PriorityCodes"/>), compatable with HL7 table 0485 (Extended Priority Codes)
+        /// Collection of <see cref="Diagnosis"/>, associated with the order
         /// </summary>
-        public string PriorityCode { get; set; } = PriorityCodes.ROUTINE;
-
-        /// <summary>
-        /// Not null value indicates desired date and time of sample collection and execution
-        /// </summary>
-        public DateTime? ScheduledTime { get; set; } = null;
+        public IEnumerable<Diagnosis> Diagnoses { get; set; }
 
         /// <summary>
         /// Collection of <see cref="Sample"/>, associated with the order

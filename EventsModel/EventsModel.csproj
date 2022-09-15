@@ -12,9 +12,9 @@
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>iLab</PackageTags>
+		<PackageTags>iLab;QctiveMQ</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.2.0</Version>
+		<Version>0.3.0</Version>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>

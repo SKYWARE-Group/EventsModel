@@ -29,7 +29,7 @@ namespace Skyware.Lis.EventsModel.Common
         /// <summary>
         /// True if the examination is a panel (profile)
         /// </summary>
-        public bool IsPanel { get; set; }
+        public bool? IsPanel { get; set; }
 
     }
 

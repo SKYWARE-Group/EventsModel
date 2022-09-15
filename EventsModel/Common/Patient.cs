@@ -19,12 +19,12 @@ namespace Skyware.Lis.EventsModel.Common
         /// <summary>
         /// Type Id in LIS iLab
         /// </summary>
-        public string IdentifierTypeId { get; set; }
+        public int IdentifierTypeId { get; set; }
 
         /// <summary>
         /// Type of well-known identifier of the patient
         /// </summary>
-        public string IdentifierType { get; set; }
+        public string IdentifierTypeName { get; set; }
 
         /// <summary>
         /// Identifier of the, such as SSN, EGN, etc.

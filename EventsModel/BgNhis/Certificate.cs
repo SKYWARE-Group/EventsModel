@@ -17,19 +17,9 @@ namespace Skyware.Lis.EventsModel.BgNhis
         public string SerialNumber { get; set; }
 
         /// <summary>
-        /// Frendly name of the Rila record
+        /// Frendly name of the Rila record or Subject of the certificate
         /// </summary>
         public string FriendlyName { get; set; }
-
-        /// <summary>
-        /// Doctor's UIN (according to Bulgarian BMA)
-        /// </summary>
-        public string Uin { get; set; }
-
-        /// <summary>
-        /// Practice number associated with this record
-        /// </summary>
-        public string PracticeNumber { get; set; }
 
     }
 

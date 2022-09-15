@@ -12,11 +12,6 @@ namespace Skyware.Lis.EventsModel.Payments
     {
 
         /// <summary>
-        /// If in LIS iLab
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
         /// Id of the terminal
         /// </summary>
         public string TerminalId { get; set; }
@@ -30,7 +25,6 @@ namespace Skyware.Lis.EventsModel.Payments
         /// Card scheme, such as 'VISA CREDIT'
         /// </summary>
         public string CardScheme { get; set; }
-
 
     }
 

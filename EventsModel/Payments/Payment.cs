@@ -20,7 +20,7 @@ namespace Skyware.Lis.EventsModel.Payments
         /// <summary>
         /// Id of the payment in LIS iLab
         /// </summary>
-        public string PaymentId { get; set; }
+        public int PaymentId { get; set; }
 
         /// <summary>
         /// Sale to which payment is aasociated

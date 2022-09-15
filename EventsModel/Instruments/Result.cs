@@ -32,7 +32,6 @@ namespace Skyware.Lis.EventsModel.Instruments
         /// </summary>
         public ResultData Data { get; set; }
 
-
     }
 
 }
