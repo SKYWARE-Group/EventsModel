@@ -10,9 +10,7 @@ namespace Skyware.Lis.EventsModel.BgNhis;
 public class ReferralAction : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://bg-nhis/referrals";
 
     /// <summary>

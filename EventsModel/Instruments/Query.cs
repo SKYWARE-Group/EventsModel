@@ -8,9 +8,7 @@
 public class Query : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://instruments/queries";
 
     /// <summary>

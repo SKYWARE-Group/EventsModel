@@ -8,9 +8,7 @@
 public class OrderAction : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://orders";
 
     /// <summary>

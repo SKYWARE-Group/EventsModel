@@ -1,4 +1,6 @@
-﻿using Skyware.Lis.EventsModel.Common;
+﻿// Ignore Spelling: ver
+
+using Skyware.Lis.EventsModel.Common;
 using System;
 
 namespace Skyware.Lis.EventsModel;
@@ -21,9 +23,14 @@ public abstract class BaseMessage
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
-    /// Date and time when message is generated
+    /// Date and time (UTC) when message is generated
     /// </summary>
-    public DateTime EventTime { get; set; } = DateTime.Now;
+    public DateTime EventTime { get; set; } = DateTime.UtcNow;
+
+    /// <summary>
+    /// Local date and time (according to receiver)
+    /// </summary>
+    public DateTime LocalEventTime => EventTime.ToLocalTime();
 
     /// <summary>
     /// Origin application name
@@ -49,6 +56,5 @@ public abstract class BaseMessage
     /// If LIS supports locations, <see cref="Location"/> where event is generated
     /// </summary>
     public Location OriginLocation { get; set; }
-
 
 }

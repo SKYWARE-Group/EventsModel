@@ -10,9 +10,7 @@ namespace Skyware.Lis.EventsModel.Instruments;
 public class Order : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://instruments/orders";
 
     /// <summary>

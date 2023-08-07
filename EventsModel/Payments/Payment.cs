@@ -8,9 +8,7 @@
 public class Payment : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://payments";
 
     /// <summary>

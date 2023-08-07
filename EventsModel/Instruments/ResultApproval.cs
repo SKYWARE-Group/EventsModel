@@ -8,9 +8,7 @@
 public class ResultApproval : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://instruments/result-approvals";
 
     /// <summary>

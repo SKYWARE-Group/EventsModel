@@ -9,9 +9,7 @@ namespace Skyware.Lis.EventsModel.BgNra;
 public class InsuranceCheck : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://bg-nra/insurance-checks";
 
     /// <summary>

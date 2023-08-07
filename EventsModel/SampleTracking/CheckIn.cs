@@ -12,9 +12,7 @@ namespace Skyware.Lis.EventsModel.SampleTracking;
 public class CheckIn : BaseMessage
 {
 
-    /// <summary>
-    /// Default address where messages are produced
-    /// </summary>
+    /// <inheritdoc/>
     public override string DefaultAddress => "topic://smp-tracking/check-in";
 
     /// <summary>
