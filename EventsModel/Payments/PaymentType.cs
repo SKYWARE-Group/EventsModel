@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Skyware.Lis.EventsModel.Payments;
 
-namespace Skyware.Lis.EventsModel.Payments
+
+/// <summary>
+/// Represents payment type, such as "Cash", ""Voucher", etc.
+/// </summary>
+public class PaymentType
 {
 
     /// <summary>
-    /// Represents payment type, such as "Cash", ""Voucher", etc.
+    /// Identifier of the type according to LIS iLab
     /// </summary>
-    public class PaymentType
-    {
+    public int Id { get; set; }
 
-        /// <summary>
-        /// Identifier of the type according to LIS iLab
-        /// </summary>
-        public int Id { get; set; }  
+    /// <summary>
+    /// Descriptive name of the payment
+    /// </summary>
+    public string Name { get; set; }
 
-        /// <summary>
-        /// Descriptive name of the payment
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// If the payment is in cash
-        /// </summary>
-        public bool IsCash { get; set; }
-
-    }
+    /// <summary>
+    /// If the payment is in cash
+    /// </summary>
+    public bool IsCash { get; set; }
 
 }

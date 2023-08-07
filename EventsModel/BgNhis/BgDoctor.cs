@@ -1,28 +1,25 @@
-﻿using Skyware.Lis.EventsModel.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// Ignore Spelling: bg
 
-namespace Skyware.Lis.EventsModel.BgNhis
+using Skyware.Lis.EventsModel.Common;
+
+namespace Skyware.Lis.EventsModel.BgNhis;
+
+
+/// <summary>
+/// Doctor, according to Bulgarian regulations (inherits <see cref="Doctor"/>)
+/// </summary>
+public class BgDoctor : Doctor
 {
 
     /// <summary>
-    /// Doctor, according to Bulgarian regulations (inherits <see cref="Doctor"/>)
+    /// Speciality code, according to NHIF
     /// </summary>
-    public class BgDoctor : Doctor
-    {
+    public string NhifSpecialityCode { get; set; }
 
-        /// <summary>
-        /// Speciality code, according to NHIF
-        /// </summary>
-        public string NhifSpecialityCoe { get; set; }
+    /// <summary>
+    /// Speciality code, according to NHIS (CL006)
+    /// </summary>
+    public string NhisSpecialityCode { get; set; }
 
-        /// <summary>
-        /// Speciality code, according to NHIS (CL006)
-        /// </summary>
-        public string NhisSpecialityCode { get; set; }
-
-
-    }
 
 }

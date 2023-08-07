@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <LangVersion>10.0</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Mikhail Kalatchev</Authors>
 		<PackageId>Skyware.Lis.$(AssemblyName)</PackageId>
@@ -14,14 +15,14 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>iLab;ActiveMQ</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.3.0</Version>
+		<Version>0.4.0</Version>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<AssemblyName>Skyware.Lis.$(MSBuildProjectName)</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>EventSysIcon.png</PackageIcon>
-		<Title>LIS iLab Eevents Data Model</Title>
+		<Title>LIS iLab Events Data Model</Title>
 	</PropertyGroup>
 
 	<ItemGroup>

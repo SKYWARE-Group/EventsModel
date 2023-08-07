@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Skyware.Lis.EventsModel.BgNhis;
 
-namespace Skyware.Lis.EventsModel.BgNhis
+
+/// <summary>
+/// Represents e-signature (X509 certificate on chip and supplemental data)
+/// </summary>
+public class Certificate
 {
 
     /// <summary>
-    /// Represents e-signature (X509 certificate on chip and supplemental data)
+    /// Serial number of the certificate
     /// </summary>
-    public class Certificate
-    {
+    public string SerialNumber { get; set; }
 
-        /// <summary>
-        /// Serial number of the certificate
-        /// </summary>
-        public string SerialNumber { get; set; }
-
-        /// <summary>
-        /// Frendly name of the Rila record or Subject of the certificate
-        /// </summary>
-        public string FriendlyName { get; set; }
-
-    }
+    /// <summary>
+    /// Friendly name of the Rila record or Subject of the certificate
+    /// </summary>
+    public string FriendlyName { get; set; }
 
 }

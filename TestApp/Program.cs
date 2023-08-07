@@ -1,6 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Skyware.Lis.EventsModel;
-using System.Diagnostics;
 using System.Reflection;
 
 
