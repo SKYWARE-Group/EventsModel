@@ -2,8 +2,7 @@
 
 
 /// <summary>
-/// Event. Occurs when operation with <see cref="Order"/> is made
-/// Default address: topic://orders
+/// Occurs when operation with <see cref="Order"/> is made
 /// </summary>
 public class OrderAction : BaseMessage
 {

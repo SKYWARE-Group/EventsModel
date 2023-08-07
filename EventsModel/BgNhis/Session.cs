@@ -4,8 +4,7 @@ namespace Skyware.Lis.EventsModel.BgNhis;
 
 
 /// <summary>
-/// Event. Represent attempt for creation of session in NHIS
-/// Default address: topic://bg-nhis/sessions
+/// Represent attempt for creation of session in NHIS
 /// </summary>
 public class Session : BaseMessage
 {

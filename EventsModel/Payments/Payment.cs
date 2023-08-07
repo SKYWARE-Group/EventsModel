@@ -2,8 +2,7 @@
 
 
 /// <summary>
-/// Event. Occurs when a payment is made 
-/// Default address: topic://instruments/queries
+/// Occurs when a payment is made 
 /// </summary>
 public class Payment : BaseMessage
 {

@@ -3,8 +3,7 @@
 namespace Skyware.Lis.EventsModel.BgNra;
 
 /// <summary>
-/// Event. Occurs when Health Insurance (Bulgaria, NRA) is checked 
-/// Default address: topic://bg-nra/insurance-checks
+/// Occurs when Health Insurance (Bulgaria, NRA) is checked 
 /// </summary>
 public class InsuranceCheck : BaseMessage
 {

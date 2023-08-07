@@ -2,8 +2,7 @@
 
 
 /// <summary>
-/// Event. Occurs when results is received from an <see cref="Instrument"/> 
-/// Default address: topic://instruments/results
+/// Occurs when results is received from an <see cref="Instrument"/> 
 /// </summary>
 public class Result : BaseMessage
 {

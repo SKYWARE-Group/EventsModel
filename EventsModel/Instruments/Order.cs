@@ -4,8 +4,7 @@ namespace Skyware.Lis.EventsModel.Instruments;
 
 
 /// <summary>
-/// Event. Occurs when LIS sends a sample order to an <see cref="Instrument"/>
-/// Default address: topic://instruments/orders
+/// Occurs when LIS sends a sample order to an <see cref="Instrument"/>
 /// </summary>
 public class Order : BaseMessage
 {

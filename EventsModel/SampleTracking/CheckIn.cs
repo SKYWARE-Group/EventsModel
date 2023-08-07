@@ -6,8 +6,7 @@ namespace Skyware.Lis.EventsModel.SampleTracking;
 
 
 /// <summary>
-/// Event. Occurs when <see cref="Common.Sample"/> is is checked in or out of given <see cref="Common.Location"/>
-/// Default address: topic://smp-tracking/check-in
+/// Occurs when <see cref="Common.Sample"/> is is checked in or out of given <see cref="Common.Location"/>
 /// </summary>
 public class CheckIn : BaseMessage
 {

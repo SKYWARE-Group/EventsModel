@@ -2,8 +2,7 @@
 
 
 /// <summary>
-/// Event. Occurs when  <see cref="Instrument"/> queries test selection by Sample Id (barcode) 
-/// Default address: topic://instruments/queries
+/// Occurs when  <see cref="Instrument"/> queries test selection by Sample Id (barcode) 
 /// </summary>
 public class Query : BaseMessage
 {

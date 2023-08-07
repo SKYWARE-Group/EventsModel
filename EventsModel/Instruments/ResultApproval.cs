@@ -2,8 +2,7 @@
 
 
 /// <summary>
-/// Event. Occurs when test result is approved and sent to LIS
-/// Default address: topic://instruments/result-approvals
+/// Occurs when test result is approved and sent to LIS
 /// </summary>
 public class ResultApproval : BaseMessage
 {

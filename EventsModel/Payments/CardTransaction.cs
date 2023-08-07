@@ -13,7 +13,7 @@ public class CardTransaction
     public string TerminalId { get; set; }
 
     /// <summary>
-    /// Number of the transaction (sequence number for given terminal, reset daily)
+    /// Number of the transaction (sequence number for given terminal, resets daily)
     /// </summary>
     public string TransactionNumber { get; set; }
 

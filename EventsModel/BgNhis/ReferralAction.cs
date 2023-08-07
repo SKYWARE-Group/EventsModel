@@ -4,8 +4,7 @@ namespace Skyware.Lis.EventsModel.BgNhis;
 
 
 /// <summary>
-/// Event. Occurs when action with a <see cref="Referral"/> is made
-/// Default address: topic://topic://bg-nhis/referrals
+/// Occurs when action with a <see cref="Referral"/> is made
 /// </summary>
 public class ReferralAction : BaseMessage
 {

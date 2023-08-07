@@ -8,8 +8,7 @@ namespace Skyware.Lis.EventsModel.SampleTracking;
 
 
 /// <summary>
-/// Event. Occurs when set of samples is transfered from one to another <see cref="Location"/>
-/// Default address: topic://smp-tracking/shipments
+/// Occurs when set of samples is transfered from one to another <see cref="Location"/>
 /// </summary>
 public class SampleShipment : BaseMessage
 {
