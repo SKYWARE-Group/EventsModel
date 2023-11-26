@@ -9,7 +9,6 @@ namespace Skyware.Lis.EventsModel.Visits;
 public class Sale : BaseMessage
 {
 
-
     /// <inheritdoc/>
     public override string DefaultAddress => "topic://sales";
 
