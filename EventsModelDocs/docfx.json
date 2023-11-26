@@ -8,17 +8,16 @@
         }
       ],
       "dest": "api",
+      "namespaceLayout": "nested",
       "disableDefaultFilter": false,
-      "disableGitFeatures": false,
-      "namespaceLayout": "nested"
+      "disableGitFeatures": false
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "api/**.yml"
         ]
       },
       {
@@ -49,17 +48,21 @@
       }
     ],
     "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "My App",
+      "_disableContribution": true
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "modern"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false,
-    "namespaceLayout": "nested"
+    "disableGitFeatures": false
   }
 }

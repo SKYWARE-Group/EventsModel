@@ -7,7 +7,7 @@ The `Sale` event occurs when Sale is created, modified or deleted.
 |:--- |:--- |
 | Address | `topic://sales` |
 | Object | `Skyware.Lis.EventsModel.Visits.Sale` |
-| Events | Sale is created, modified or deleted |
+| Events | Sale is created, modified or deleted (see `CommonEvents`) |
 | Applications | iReg |
 
 ## Instruments

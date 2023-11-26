@@ -7,9 +7,9 @@ single-purpose event processing components that asynchronously receive and proce
 
 iLab Events System is intended to deliver real-time messages between different modules, applications and systems, 
 thus making event driven architecture possible. It is implemented with 
-[Apache ActiveMQ Artemis](https://activemq.apache.org/components/artemis/){:target="_blank"}. 
+[Apache ActiveMQ Artemis](https://activemq.apache.org/components/artemis/). 
 The main approach is 
-[Publish-Subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_blank"}. 
+[Publish-Subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern). 
 The idea is to generate a message on every event in the system (e.g. patient is 
 registered, result is entered, etc.) and to notify anyone who is interested in this particular event.
 
@@ -29,7 +29,9 @@ entered in LIS iLab. That's it!
 ## Object model
 
 The messages are just serialized JSON objects. The reference object model is maintained as an open source 
-project in this repository. If you using .NET you can use it directly as a NuGet package. In this documentation you will find addresses and expected objects as well as short descriptions for every event is produced.
+project in this repository. If you using .NET you can use it directly as a NuGet package. 
+In this documentation you will find addresses and expected objects as well as short descriptions 
+for every event is produced.
 
 
 
