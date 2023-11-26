@@ -2,7 +2,6 @@
 
 namespace Skyware.Lis.EventsModel.Instruments;
 
-
 /// <summary>
 /// Occurs when LIS sends a sample order to an <see cref="Instrument"/>
 /// </summary>

@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.Payments;
 
-
 /// <summary>
 /// Occurs when a payment is made 
 /// </summary>

@@ -2,7 +2,6 @@
 
 namespace Skyware.Lis.EventsModel.BgNhis;
 
-
 /// <summary>
 /// Occurs when action with a <see cref="Referral"/> is made
 /// </summary>

@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.BgNhis;
 
-
 /// <summary>
 /// Well-known values for referral events 
 /// </summary>

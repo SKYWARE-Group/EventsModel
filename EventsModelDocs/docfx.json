@@ -3,15 +3,14 @@
     {
       "src": [
         {
-          "files": [
-            "**.csproj"
-          ],
-          "src": "C:\\Users\\Misho\\source\\repos\\Git\\EventsModel\\EventsModel"
+          "files": [ "**.csproj" ],
+          "src": "C:/Users/kalat/source/repos/Git/EventsModel/EventsModel/"
         }
       ],
       "dest": "api",
+      "disableDefaultFilter": false,
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "namespaceLayout": "nested"
     }
   ],
   "build": {
@@ -60,6 +59,7 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "disableGitFeatures": false,
+    "namespaceLayout": "nested"
   }
 }

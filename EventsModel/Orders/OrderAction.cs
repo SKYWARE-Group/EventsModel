@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.Orders;
 
-
 /// <summary>
 /// Occurs when operation with <see cref="Order"/> is made
 /// </summary>

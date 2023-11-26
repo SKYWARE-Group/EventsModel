@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.Instruments;
 
-
 /// <summary>
 /// Occurs when results is received from an <see cref="Instrument"/> 
 /// </summary>

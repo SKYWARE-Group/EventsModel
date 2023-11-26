@@ -1,10 +1,9 @@
-﻿// Ignore Spelling: ver
-
-using Skyware.Lis.EventsModel.Common;
+﻿using Skyware.Lis.EventsModel.Common;
 using System;
 
-namespace Skyware.Lis.EventsModel;
+// Ignore Spelling: ver
 
+namespace Skyware.Lis.EventsModel;
 
 /// <summary>
 /// Base class for all messages produced by LIS iLab

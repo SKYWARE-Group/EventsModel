@@ -1,9 +1,8 @@
-﻿// Ignore Spelling: smp
+﻿using Skyware.Lis.EventsModel.Common;
 
-using Skyware.Lis.EventsModel.Common;
+// Ignore Spelling: smp
 
 namespace Skyware.Lis.EventsModel.SampleTracking;
-
 
 /// <summary>
 /// Occurs when <see cref="Common.Sample"/> is is checked in or out of given <see cref="Common.Location"/>

@@ -2,7 +2,6 @@
 
 namespace Skyware.Lis.EventsModel.BgNhis;
 
-
 /// <summary>
 /// Represent attempt for creation of session in NHIS
 /// </summary>

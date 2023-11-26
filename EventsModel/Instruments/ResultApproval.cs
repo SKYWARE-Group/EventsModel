@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.Instruments;
 
-
 /// <summary>
 /// Occurs when test result is approved and sent to LIS
 /// </summary>

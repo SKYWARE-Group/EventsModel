@@ -1,6 +1,5 @@
 ﻿namespace Skyware.Lis.EventsModel.Instruments;
 
-
 /// <summary>
 /// Occurs when  <see cref="Instrument"/> queries test selection by Sample Id (barcode) 
 /// </summary>

@@ -1,63 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <LangVersion>10.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;net7.0;net8.0</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Mikhail Kalatchev</Authors>
 		<PackageId>Skyware.Lis.$(AssemblyName)</PackageId>
 		<Company>SKYWARE Group</Company>
 		<Product>LIS iLab</Product>
 		<Description>Data model of LIS iLab event system</Description>
-		<Copyright>Copyright (C) 2022, SKYWARE Group</Copyright>
+		<Copyright>Copyright (C) 2022-2023, SKYWARE Group</Copyright>
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>iLab;ActiveMQ</PackageTags>
 		<SignAssembly>False</SignAssembly>
 		<Version>0.4.0</Version>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<AssemblyName>Skyware.Lis.$(MSBuildProjectName)</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageIcon>EventSysIcon.png</PackageIcon>
+		<PackageIcon>event-sys-icon.png</PackageIcon>
 		<Title>LIS iLab Events Data Model</Title>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Content Include="Assets\EventSysIcon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="Assets\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="Assets\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="docfx.console" Version="2.59.3">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="Assets\EventSysIcon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\event-sys-icon.png" Pack="true" PackagePath="" />
+    <None Include="Assets\readme.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
 
 </Project>
