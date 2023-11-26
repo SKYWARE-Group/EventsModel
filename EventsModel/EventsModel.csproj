@@ -23,7 +23,29 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>event-sys-icon.png</PackageIcon>
 		<Title>LIS iLab Events Data Model</Title>
+		<ApplicationIcon>event-model.ico</ApplicationIcon>
+		<Nullable>disable</Nullable>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+	  <WarningLevel>7</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+	  <WarningLevel>7</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+	  <WarningLevel>7</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+	  <WarningLevel>7</WarningLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="event-model.ico" />
+	</ItemGroup>
 
   <ItemGroup>
     <None Include="Assets\event-sys-icon.png" Pack="true" PackagePath="" />
