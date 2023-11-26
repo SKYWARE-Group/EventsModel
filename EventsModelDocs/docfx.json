@@ -3,23 +3,21 @@
     {
       "src": [
         {
-          "files": [
-            "**.csproj"
-          ],
-          "src": "C:\\Users\\Misho\\source\\repos\\Git\\EventsModel\\EventsModel"
+          "files": [ "**.csproj" ],
+          "src": "C:/Users/kalat/source/repos/Git/EventsModel/EventsModel/"
         }
       ],
       "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "namespaceLayout": "nested",
+      "disableDefaultFilter": false,
+      "disableGitFeatures": false
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "api/**.yml"
         ]
       },
       {
@@ -50,10 +48,15 @@
       }
     ],
     "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "My App",
+      "_disableContribution": true
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "modern"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",

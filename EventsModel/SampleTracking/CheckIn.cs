@@ -1,38 +1,31 @@
 ﻿using Skyware.Lis.EventsModel.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Skyware.Lis.EventsModel.SampleTracking
+// Ignore Spelling: smp
+
+namespace Skyware.Lis.EventsModel.SampleTracking;
+
+/// <summary>
+/// Occurs when <see cref="Common.Sample"/> is is checked in or out of given <see cref="Common.Location"/>
+/// </summary>
+public class CheckIn : BaseMessage
 {
 
+    /// <inheritdoc/>
+    public override string DefaultAddress => "topic://smp-tracking/check-in";
+
     /// <summary>
-    /// Event. Occurs when <see cref="Common.Sample"/> is is checkd in or out of given <see cref="Common.Location"/>
-    /// Deafualt address: topic://smp-tracking/check-in
+    /// True if operation is check in, false - check out
     /// </summary>
-    public class CheckIn : BaseMessage
-    {
+    public bool IsCheckIn { get; set; }
 
-        /// <summary>
-        /// Default address where messages are produced
-        /// </summary>
-        public override string DefaultAddress => "topic://smp-tracking/check-in";
+    /// <summary>
+    /// Subject of the operation
+    /// </summary>
+    public Sample Sample { get; set; }
 
-        /// <summary>
-        /// True if operation is chek in, false - check out
-        /// </summary>
-        public bool IsChekIn { get; set; }
-
-        /// <summary>
-        /// Subject of the operation
-        /// </summary>
-        public Sample Sample { get; set; }
-
-        /// <summary>
-        /// <see cref="Location"/> where operation is made
-        /// </summary>
-        public Location TargetLocation { get; set; }
-
-    }
+    /// <summary>
+    /// <see cref="Location"/> where operation is made
+    /// </summary>
+    public Location TargetLocation { get; set; }
 
 }

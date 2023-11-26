@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Skyware.Lis.EventsModel.Payments;
 
-namespace Skyware.Lis.EventsModel.Payments
+
+/// <summary>
+/// Receptionist's shift
+/// </summary>
+public class Shift
 {
 
     /// <summary>
-    /// 
+    /// Id of the shift in LIS iLab
     /// </summary>
-    public class Shift
-    {
+    public int Id { get; set; }
 
-        /// <summary>
-        /// Id of the shift in LIS iLab
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
-        /// Username of the owner of the shift
-        /// </summary>
-        public string CashierId { get; set; }
-
-    }
-
+    /// <summary>
+    /// Username of the owner of the shift
+    /// </summary>
+    public string CashierId { get; set; }
 
 }

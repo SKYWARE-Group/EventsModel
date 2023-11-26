@@ -1,43 +1,34 @@
-﻿using Skyware.Lis.EventsModel.Orders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// Ignore Spelling: bg
 
-namespace Skyware.Lis.EventsModel.BgNhis
+namespace Skyware.Lis.EventsModel.BgNhis;
+
+/// <summary>
+/// Occurs when action with a <see cref="Referral"/> is made
+/// </summary>
+public class ReferralAction : BaseMessage
 {
 
+    /// <inheritdoc/>
+    public override string DefaultAddress => "topic://bg-nhis/referrals";
+
     /// <summary>
-    /// Event. Occurs when action with a <see cref="Referral"/> is made
-    /// Deafualt address: topic://topic://bg-nhis/referrals
+    /// Action made with the referral, according to <see cref="ReferralEvents"/>
     /// </summary>
-    public class ReferralAction : BaseMessage
-    {
+    public string Action { get; set; }
 
-        /// <summary>
-        /// Default address where messages are produced
-        /// </summary>
-        public override string DefaultAddress => "topic://bg-nhis/referrals";
+    /// <summary>
+    /// Sale to which referral is imported
+    /// </summary>
+    public int? SaleId { get; set; }
 
-        /// <summary>
-        /// Action made with the referral, according to <see cref="ReferralEvents"/>
-        /// </summary>
-        public string Action { get; set; }
+    /// <summary>
+    /// Sale schema of the Sale to which referral is imported
+    /// </summary>
+    public int? SchemaId { get; set; }
 
-        /// <summary>
-        /// Sale to which referral is imported
-        /// </summary>
-        public int? SaleId { get; set; }
-
-        /// <summary>
-        /// Sale scehma of the Sale to which referral is imported
-        /// </summary>
-        public int? SchemaId { get; set; }
-
-        /// <summary>
-        /// Imported/Removed <see cref="Referral"/>
-        /// </summary>
-        public Referral Referral { get; set; }
-
-    }
+    /// <summary>
+    /// Imported/Removed <see cref="Referral"/>
+    /// </summary>
+    public Referral Referral { get; set; }
 
 }

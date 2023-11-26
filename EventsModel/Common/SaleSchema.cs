@@ -1,20 +1,24 @@
 ﻿namespace Skyware.Lis.EventsModel.Common;
 
-
 /// <summary>
-/// Represents partner organization - Insurance fund, Clinic or medical practice
+/// Represent sale schema
 /// </summary>
-public class Organization
+public class SaleSchema
 {
 
     /// <summary>
-    /// Identifier in the LIS iLab
+    /// PK in the database
     /// </summary>
     public int Id { get; set; }
 
     /// <summary>
-    /// Name of organization
+    /// Name of the sale schema
     /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// 1=Standard, 2=NHIF
+    /// </summary>
+    public int SchemaType { get; set; }
 
 }

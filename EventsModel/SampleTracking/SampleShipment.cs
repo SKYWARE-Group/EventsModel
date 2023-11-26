@@ -1,58 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Skyware.Lis.EventsModel.Common;
+﻿// Ignore Spelling: smp
 
-namespace Skyware.Lis.EventsModel.SampleTracking
+using Skyware.Lis.EventsModel.Common;
+using System;
+using System.Collections.Generic;
+
+namespace Skyware.Lis.EventsModel.SampleTracking;
+
+
+/// <summary>
+/// Occurs when set of samples is transfered from one to another <see cref="Location"/>
+/// </summary>
+public class SampleShipment : BaseMessage
 {
 
+    /// <inheritdoc/>
+    public override string DefaultAddress => "topic://smp-tracking/shipments";
+
     /// <summary>
-    /// Event. Occurs when set of samples is transfered from one to another <see cref="Location"/>
-    /// Deafualt address: topic://smp-tracking/shipments
+    /// True if shipment is sent, false if it is received
     /// </summary>
-    public class SampleShipment : BaseMessage
-    {
+    public bool IsSent { get; set; }
 
-        /// <summary>
-        /// Default address where messages are produced
-        /// </summary>
-        public override string DefaultAddress => "topic://smp-tracking/shipments";
+    /// <summary>
+    /// Identifier in the LIS iLab
+    /// </summary>
+    public int ShipmentId { get; set; }
 
-        /// <summary>
-        /// True if shipment is sent, false if it is received
-        /// </summary>
-        public bool IsSent { get; set; }
+    /// <summary>
+    /// Sending <see cref="Location"/>
+    /// </summary>
+    public Location Sender { get; set; }
 
-        /// <summary>
-        /// Identifier in the LIS iLab
-        /// </summary>
-        public int ShipmentId { get; set; }
+    /// <summary>
+    /// Date and time the shipment is sent
+    /// </summary>
+    public DateTime Sent { get; set; }
 
-        /// <summary>
-        /// Sendning <see cref="Location"/>
-        /// </summary>
-        public Location Sender { get; set; }
+    /// <summary>
+    /// Intended delivery <see cref="Location"/>
+    /// </summary>
+    public Location Receiver { get; set; }
 
-        /// <summary>
-        /// Date and time the shipment is sent
-        /// </summary>
-        public DateTime Sent { get; set; }
+    /// <summary>
+    /// Date and time the shipment is received
+    /// </summary>
+    public DateTime? Received { get; set; }
 
-        /// <summary>
-        /// Intended delivery <see cref="Location"/>
-        /// </summary>
-        public Location Receiver { get; set; }
-
-        /// <summary>
-        /// Date and time the shipment is received
-        /// </summary>
-        public DateTime? Received { get; set; }
-
-        /// <summary>
-        /// Shipment's content (collection of <see cref="Sample"/>)
-        /// </summary>
-        public IEnumerable<Sample> Samples { get; set; }
-
-    }
+    /// <summary>
+    /// Shipment's content (collection of <see cref="Sample"/>)
+    /// </summary>
+    public IEnumerable<Sample> Samples { get; set; }
 
 }
