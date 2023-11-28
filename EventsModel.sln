@@ -6,7 +6,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsModel", "EventsModel\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{C3C33EA3-BA6A-4533-849E-BC5079193B8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsModelDocs", "EventsModelDocs\EventsModelDocs.csproj", "{D36B133C-EDA4-4055-89F5-CB3936612BC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsModelDocs", "EventsModelDocs\EventsModelDocs.csproj", "{D36B133C-EDA4-4055-89F5-CB3936612BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerClient48", "BrokerClient48\BrokerClient48.csproj", "{8C402A3A-2560-4F6C-B46A-E924E8AB17D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{D36B133C-EDA4-4055-89F5-CB3936612BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D36B133C-EDA4-4055-89F5-CB3936612BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D36B133C-EDA4-4055-89F5-CB3936612BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C402A3A-2560-4F6C-B46A-E924E8AB17D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C402A3A-2560-4F6C-B46A-E924E8AB17D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C402A3A-2560-4F6C-B46A-E924E8AB17D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C402A3A-2560-4F6C-B46A-E924E8AB17D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
