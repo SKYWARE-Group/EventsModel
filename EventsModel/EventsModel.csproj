@@ -9,13 +9,13 @@
 		<Company>SKYWARE Group</Company>
 		<Product>LIS iLab</Product>
 		<Description>Data model of LIS iLab event system</Description>
-		<Copyright>Copyright (C) 2022-2023, SKYWARE Group</Copyright>
+		<Copyright>Copyright (C) 2022-2024, SKYWARE Group</Copyright>
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>iLab;ActiveMQ</PackageTags>
+		<PackageTags>iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.4.0</Version>
+		<Version>0.5.0</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>

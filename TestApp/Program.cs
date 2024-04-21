@@ -21,7 +21,8 @@ class Program
     static void Main(string[] args)
     {
 
-        DoPubSub();
+        //DoPubSub();
+        EnumerateAddresses();
 
     }
 
@@ -74,6 +75,7 @@ class Program
         });
         AnsiConsole.MarkupLine("[gray]Consumer is created.[/]");
 
+        // Start connection
         connection.Start();
 
         // Send a message
