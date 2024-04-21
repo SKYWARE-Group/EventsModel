@@ -10,6 +10,16 @@ The `Sale` event occurs when Sale is created, modified or deleted.
 | Events | Sale is created, modified or deleted (see `CommonEvents`) |
 | Applications | iReg |
 
+### Result
+The `ResultsSet` event occurs when one or more results are modified or deleted.
+
+| Key | Value |
+|:--- |:--- |
+| Address | `"topic://results"` |
+| Object | `Skyware.Lis.EventsModel.Results.ResultsSet` |
+| Events | One or more Visit's results are changed |
+| Applications | iLab |
+
 ## Instruments
 
 ### Query
