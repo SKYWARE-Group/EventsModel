@@ -21,7 +21,8 @@ class Program
     static void Main(string[] args)
     {
 
-        DoPubSub();
+        //DoPubSub();
+        EnumerateAddresses();
 
     }
 

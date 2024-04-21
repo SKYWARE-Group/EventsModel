@@ -1,21 +1,14 @@
-﻿namespace Skyware.Lis.EventsModel.Instruments;
+﻿using Skyware.Lis.EventsModel.Common;
+using System;
+
+namespace Skyware.Lis.EventsModel.Instruments;
 
 
 /// <summary>
 /// Test in orders and results (Instruments communication)
 /// </summary>
-public class Test
+public class Test : TestBase
 {
-
-    /// <summary>
-    /// Test Id as it is known in target LIS
-    /// </summary>
-    public string TestId { get; set; }
-
-    /// <summary>
-    /// Test name as it is known in target LIS
-    /// </summary>
-    public string TestName { get; set; }
 
     /// <summary>
     /// Test code as it is known in the instrument
@@ -26,5 +19,15 @@ public class Test
     /// Represents discriminator of the test code
     /// </summary>
     public string CodeModifier { get; set; }
+
+    /// <summary>
+    /// Test name as it is known in target LIS
+    /// </summary>
+    /// <remarks>
+    /// This is an alias of <see cref="TestBase.Name"/> property for
+    /// backward compatibility.
+    /// </remarks>
+    [Obsolete("Use Name property.")]
+    public string TestName => Name;
 
 }
