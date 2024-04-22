@@ -29,6 +29,17 @@ Install-Package Apache.NMS.ActiveMQ
 Usually you will be able to use other protocols, such as MQTT (see [client](https://github.com/dotnet/MQTTnet)). If you nedd web browser aproach,
 then we recomment [STOMP over SockJS](https://stomp-js.github.io/guide/stompjs/rx-stomp/using-stomp-with-sockjs.html).
 
+## Tools
+
+You could use [JMS Toolbox](https://github.com/jmstoolbox/jmstoolbox) with example settings:
+
+<img src="https://github.com/SKYWARE-Group/EventsModel/assets/10154711/a5ab3a4b-1c51-4095-bbfa-ab3015c5dc2c" width="450"/>
+
+<img src="https://github.com/SKYWARE-Group/EventsModel/assets/10154711/bb8c5cd8-d589-4b14-881a-c053e681d246" width="450"/>
+
+When self-signed certiciate is used, use `sslEnabled=true;trustAll=true` in `z_ExtraNettyProperties`.
+
+
 ## Feedback
 
 Please, use issues in this repo as a first step for getting support from us
