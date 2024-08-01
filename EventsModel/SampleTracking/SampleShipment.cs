@@ -1,8 +1,8 @@
-﻿// Ignore Spelling: smp
-
-using Skyware.Lis.EventsModel.Common;
+﻿using Skyware.Lis.EventsModel.Common;
 using System;
 using System.Collections.Generic;
+
+// Ignore Spelling: smp
 
 namespace Skyware.Lis.EventsModel.SampleTracking;
 

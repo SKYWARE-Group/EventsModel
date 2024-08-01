@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Skyware.Lis.EventsModel.Common;
+using System;
+using System.Collections.Generic;
 
 namespace Skyware.Lis.EventsModel.Instruments;
 
@@ -15,23 +17,22 @@ public class ResultData
     public Test Test { get; set; }
 
     /// <summary>
-    /// Textual result representation
+    /// Result values.
     /// </summary>
-    public string Result { get; set; }
+    public ResultBag Result { get; set; } = new();
 
     /// <summary>
-    /// Decimal value of the results, in case it is numeric value
+    /// Instrument's flags.
     /// </summary>
-    public decimal? DecimalResult { get; set; }
+    public IEnumerable<InstrumentFlag> InstrumentFlags { get; set; }
 
     /// <summary>
-    /// Result flags
+    /// Flag, according to reference range (1-7, 10, 11).
     /// </summary>
-    public IEnumerable<Flag> InstrumentFlags { get; set; }
-
-    /// <summary>
-    /// Value based (iLab) flag according to reference ranges (see iLab docs)
-    /// </summary>
-    public byte? Flag { get; set; }
+    /// <remarks>
+    /// 1=ultra low, 2=very low, 3=low, 5=high, 6=very high, 7=ultra high, 10=star.
+    /// 4=no flag. Null means the flag is not calculated.
+    /// </remarks>
+    public byte? FlagLevel { get; set; } // No flag, see iLab
 
 }

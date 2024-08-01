@@ -1,5 +1,6 @@
 ﻿using Skyware.Lis.EventsModel.Common;
 using System;
+using System.Text.Json.Serialization;
 
 // Ignore Spelling: ver
 
@@ -8,6 +9,7 @@ namespace Skyware.Lis.EventsModel;
 /// <summary>
 /// Base class for all messages produced by LIS iLab
 /// </summary>
+[JsonDerivedType(typeof(Results.ResultsSet), typeDiscriminator: "rs")]
 public abstract class BaseMessage
 {
 

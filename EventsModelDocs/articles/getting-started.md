@@ -1,6 +1,6 @@
 ﻿## Getting started
 
-### Dependancies
+### Dependencies
 
 ![Nuget](https://img.shields.io/nuget/v/Skyware.Lis.EventsModel?label=Skyware.Lis.EventsModel) 
 ![Nuget](https://img.shields.io/nuget/v/Apache.NMS?label=Apache.NMS)

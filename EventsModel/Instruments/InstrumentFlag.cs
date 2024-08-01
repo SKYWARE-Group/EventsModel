@@ -4,7 +4,7 @@
 /// <summary>
 /// Represents instrument's flag of the result, such as 'High", "Low", etc.
 /// </summary>
-public class Flag
+public class InstrumentFlag
 {
 
     /// <summary>

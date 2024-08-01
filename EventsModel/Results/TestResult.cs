@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Skyware.Lis.EventsModel.Common;
+using System;
 
 namespace Skyware.Lis.EventsModel.Results;
 
@@ -24,19 +25,9 @@ public class TestResult
     public ResultStatuses Status { get; set; } = ResultStatuses.Unknown;
 
     /// <summary>
-    /// Result as text.
+    /// Result values.
     /// </summary>
-    public string Result { get; set; }
-
-    /// <summary>
-    /// Optional, prefix such as "&gt;", "&lt;&lt;", etc.
-    /// </summary>
-    public string NumericPrefix { get; set; }
-
-    /// <summary>
-    /// Optional, decimal result.
-    /// </summary>
-    public decimal? NumericResult { get; set; }
+    public ResultBag Result { get; set; } = new();
 
     /// <summary>
     /// Flag, according to reference range (1-7, 10, 11).

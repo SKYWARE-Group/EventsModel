@@ -49,16 +49,18 @@
     ],
     "dest": "_site",
     "globalMetadata": {
-      "_appTitle": "My App",
-      "_disableContribution": true
+      "_appTitle": "Events Model",
+      "_disableContribution": true,
+      "_enableSearch": "true"
     },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/material"
     ],
-    "postProcessors": [],
+    "postProcessors": [ "ExtractSearchIndex" ],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
