@@ -13,9 +13,9 @@
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>iLab;ActiveMQ;Events</PackageTags>
+		<PackageTags>LIS;iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.5.0</Version>
+		<Version>0.5.1</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
