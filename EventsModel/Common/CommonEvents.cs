@@ -7,17 +7,17 @@ public class CommonEvents
 {
 
     /// <summary>
-    /// New referral is imported
+    /// Object is created.
     /// </summary>
     public const string CREATED = "Created";
 
     /// <summary>
-    /// The imported referral is locked in NHIS
+    /// Object or its children is updated.
     /// </summary>
     public const string UPDATED = "Updated";
 
     /// <summary>
-    /// The imported referral is unlocked in NHIS
+    /// Object or its children is deleted.
     /// </summary>
     public const string DELETED = "Deleted";
 
