@@ -1,5 +1,6 @@
 ﻿using Skyware.Lis.EventsModel.Common;
 using System;
+using System.Text.Json.Serialization;
 
 // Ignore Spelling: ver
 
@@ -8,12 +9,28 @@ namespace Skyware.Lis.EventsModel;
 /// <summary>
 /// Base (abstract) class for all messages emitted by LIS iLab.
 /// </summary>
+[JsonDerivedType(typeof(SampleTracking.CheckIn))]
+[JsonDerivedType(typeof(Instruments.Order))]
+[JsonDerivedType(typeof(Instruments.Query))]
+[JsonDerivedType(typeof(Instruments.Result))]
+[JsonDerivedType(typeof(Instruments.ResultApproval))]
+[JsonDerivedType(typeof(Instruments.SampleApproval))]
+[JsonDerivedType(typeof(Orders.OrderAction))]
+[JsonDerivedType(typeof(Results.ResultsSet))]
+[JsonDerivedType(typeof(Visits.Sale))]
+[JsonDerivedType(typeof(SampleTracking.CheckIn))]
+[JsonDerivedType(typeof(SampleTracking.SampleShipment))]
+[JsonDerivedType(typeof(Payments.Payment))]
+[JsonDerivedType(typeof(BgNra.InsuranceCheck))]
+[JsonDerivedType(typeof(BgNhis.ReferralAction))]
+[JsonDerivedType(typeof(BgNhis.Session))]
 public abstract class BaseMessage
 {
 
     /// <summary>
     /// Default address where message should be send.
     /// </summary>
+    [JsonIgnore]
     public abstract string DefaultAddress { get; }
 
     /// <summary>

@@ -4,34 +4,54 @@ namespace Skyware.Lis.EventsModel.Common;
 
 
 /// <summary>
-/// Represent a sample to be tested
+/// Patient sample.
 /// </summary>
 public class Sample
 {
 
     /// <summary>
-    /// Barcode of the sample (unique across LIS iLab)
+    /// Primary key in LIS iLab.
+    /// </summary>
+    public int Id { get; set; }
+
+    /// <summary>
+    /// Barcode of the sample (unique across LIS iLab).
     /// </summary>
     public string Barcode { get; set; }
 
     /// <summary>
-    /// LOINC of the sample (sample type)
+    /// LOINC of the sample (sample type).
     /// </summary>
     public string LoincCode { get; set; }
 
     /// <summary>
-    /// Laboratory wide code for sample type, printed on the tube
+    /// Code of the additive in the tube.
+    /// </summary>
+    public string AdditiveCode { get; set; }
+
+    /// <summary>
+    /// Code of the body part the sample is taken from.
+    /// </summary>
+    public string BodyPartCode { get; set; }
+
+    /// <summary>
+    /// Laboratory code for sample type printed on the tube.
     /// </summary>
     public string LaboratoryCode { get; set; }
 
     /// <summary>
-    /// The date and time the sample has been taken
+    /// The date and time the sample has been taken.
     /// </summary>
     public DateTime? Taken { get; set; }
 
     /// <summary>
-    /// Barcode of the original <see cref="Sample"/>, in case of aliquot
+    /// Barcode of the original <see cref="Sample"/>, in case of aliquot.
     /// </summary>
     public string DerivedFrom { get; set; }
+
+    /// <summary>
+    /// Type of the event.
+    /// </summary>
+    public string EventType { get; set; }
 
 }

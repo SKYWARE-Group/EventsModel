@@ -1,8 +1,12 @@
-﻿namespace Skyware.Lis.EventsModel.Common;
+﻿using System.Text.Json.Serialization;
+
+namespace Skyware.Lis.EventsModel.Common;
 
 /// <summary>
 /// Test (assay, analyte)
 /// </summary>
+[JsonDerivedType(typeof(Instruments.Test))]
+[JsonDerivedType(typeof(Results.Test))]
 public abstract class TestBase
 {
 

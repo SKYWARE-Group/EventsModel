@@ -1,9 +1,12 @@
-﻿namespace Skyware.Lis.EventsModel.Common;
+﻿using System.Text.Json.Serialization;
+
+namespace Skyware.Lis.EventsModel.Common;
 
 
 /// <summary>
 /// Represent medical doctor (inherits <see cref="Person"/>)
 /// </summary>
+[JsonDerivedType(typeof(BgNhis.BgDoctor))]
 public class Doctor : Person
 {
 
@@ -13,7 +16,7 @@ public class Doctor : Person
     public int Id { get; set; }
 
     /// <summary>
-    /// Professional identifier issued by national or local authorities
+    /// Professional identifier issued by national or local healthcare authorities
     /// </summary>
     public string Identifier { get; set; }
 
