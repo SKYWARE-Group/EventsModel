@@ -27,4 +27,9 @@ public class Examination
     /// </summary>
     public bool? IsPanel { get; set; }
 
+    /// <summary>
+    /// Type of the event.
+    /// </summary>
+    public string EventType { get; set; }
+
 }

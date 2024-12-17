@@ -1,11 +1,10 @@
-﻿// Ignore Spelling: nrn lrn
-
-using Skyware.Lis.EventsModel.Common;
+﻿using Skyware.Lis.EventsModel.Common;
 using System;
 using System.Collections.Generic;
 
-namespace Skyware.Lis.EventsModel.BgNhis;
+// Ignore Spelling: nrn lrn
 
+namespace Skyware.Lis.EventsModel.BgNhis;
 
 /// <summary>
 /// Represent e-referral from Bulgarian NHIS (form #4 of MoH)

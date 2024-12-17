@@ -1,9 +1,14 @@
-﻿namespace Skyware.Lis.EventsModel.Common;
+﻿using System.Text.Json.Serialization;
+
+namespace Skyware.Lis.EventsModel.Common;
 
 
 /// <summary>
 /// Abstract object representing a person
 /// </summary>
+[JsonDerivedType(typeof(Common.Doctor))]
+[JsonDerivedType(typeof(Common.Patient))]
+[JsonDerivedType(typeof(BgNhis.BgDoctor))]
 public abstract class Person
 {
 

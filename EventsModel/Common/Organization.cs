@@ -1,9 +1,12 @@
-﻿namespace Skyware.Lis.EventsModel.Common;
+﻿using System.Text.Json.Serialization;
+
+namespace Skyware.Lis.EventsModel.Common;
 
 
 /// <summary>
 /// Represents partner organization - Insurance fund, Clinic or medical practice
 /// </summary>
+[JsonDerivedType(typeof(BgNhis.MedicalPractice))]
 public class Organization
 {
 

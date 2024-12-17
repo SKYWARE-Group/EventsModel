@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net7.0;net8.0</TargetFrameworks>
-    <LangVersion>12.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <LangVersion>13.0</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Mikhail Kalatchev</Authors>
 		<PackageId>Skyware.Lis.$(AssemblyName)</PackageId>
@@ -15,7 +15,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>LIS;iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.5.1</Version>
+		<Version>0.6.0</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -50,6 +50,10 @@
   <ItemGroup>
     <None Include="Assets\event-sys-icon.png" Pack="true" PackagePath="" />
     <None Include="Assets\readme.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
 </Project>

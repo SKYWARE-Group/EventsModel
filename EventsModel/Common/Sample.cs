@@ -25,6 +25,16 @@ public class Sample
     public string LoincCode { get; set; }
 
     /// <summary>
+    /// Code of the additive in the tube.
+    /// </summary>
+    public string AdditiveCode { get; set; }
+
+    /// <summary>
+    /// Code of the body part the sample is taken from.
+    /// </summary>
+    public string BodyPartCode { get; set; }
+
+    /// <summary>
     /// Laboratory code for sample type printed on the tube.
     /// </summary>
     public string LaboratoryCode { get; set; }
@@ -38,5 +48,10 @@ public class Sample
     /// Barcode of the original <see cref="Sample"/>, in case of aliquot.
     /// </summary>
     public string DerivedFrom { get; set; }
+
+    /// <summary>
+    /// Type of the event.
+    /// </summary>
+    public string EventType { get; set; }
 
 }

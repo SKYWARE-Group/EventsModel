@@ -1,6 +1,7 @@
 ﻿using Apache.NMS;
 using Apache.NMS.Util;
 using Microsoft.Extensions.Configuration;
+using Skyware.Lis.EventsModel;
 using Skyware.Lis.EventsModel.Common;
 using Skyware.Lis.EventsModel.SampleTracking;
 using Spectre.Console;
@@ -21,13 +22,18 @@ class Program
     static void Main(string[] args)
     {
 
-        //DoPubSub();
         EnumerateAddresses();
+        DoPubSub();
 
     }
 
     private static void DoPubSub()
     {
+
+        AnsiConsole.MarkupLine("[dodgerblue1]Pub/Sub test.[/]");
+        AnsiConsole.MarkupLine("[dodgerblue1]-----------------------------------------[/]");
+        AnsiConsole.MarkupLine("");
+
 
         // Configuration
         IConfigurationRoot conf = BuildConfig();
@@ -78,6 +84,9 @@ class Program
         // Start connection
         connection.Start();
 
+        // Base message (serialization test)
+        BaseMessage baseMessage;
+
         // Send a message
         CheckIn checkIn = new()
         {
@@ -88,9 +97,12 @@ class Program
             OriginLocation = new Location() { Id = 5, Name = "Central lab", Code = "CNTR" },
             OriginUserId = Environment.UserName,
         };
+
+        baseMessage = checkIn;
+
         ITextMessage msg = session.CreateTextMessage(JsonSerializer.Serialize(
-            checkIn,
-            checkIn.GetType(),
+            baseMessage,
+            baseMessage.GetType(),
             new JsonSerializerOptions() { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase, DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
         msg.NMSCorrelationID = Guid.NewGuid().ToString();
         msg.Properties["NMSXGroupID"] = "System";
@@ -101,6 +113,8 @@ class Program
         AnsiConsole.MarkupLine("Listening for messages, press any key to exit...");
         Console.ReadKey();
         connection.Stop();
+        AnsiConsole.MarkupLine("");
+        AnsiConsole.MarkupLine("");
     }
 
     /// <summary>
@@ -122,6 +136,10 @@ class Program
     /// </summary>
     private static void EnumerateAddresses()
     {
+        AnsiConsole.MarkupLine("[dodgerblue1]Reflection: addresses and classes.[/]");
+        AnsiConsole.MarkupLine("[dodgerblue1]-----------------------------------------[/]");
+        AnsiConsole.MarkupLine("");
+
         string curLoc = Assembly.GetExecutingAssembly().Location;
         var libFileName = Path.Combine(Path.GetDirectoryName(curLoc) ?? Directory.GetCurrentDirectory(), "Skyware.Lis.EventsModel.dll");
         Assembly libAssembly = Assembly.LoadFile(libFileName);
@@ -133,9 +151,11 @@ class Program
             {
                 var obj = Activator.CreateInstance(curType);
                 var objVal = baseMessageType.InvokeMember(nameof(Skyware.Lis.EventsModel.BaseMessage.DefaultAddress), BindingFlags.GetProperty, null, obj, null);
-                Console.WriteLine($"{objVal}: {curType.Name}");
+                AnsiConsole.MarkupLine($"[yellow]{objVal}: {curType.Name}[/]");
             }
         }
+        AnsiConsole.MarkupLine("");
+        AnsiConsole.MarkupLine("");
     }
 
 
