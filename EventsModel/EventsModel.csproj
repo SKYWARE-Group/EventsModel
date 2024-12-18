@@ -15,7 +15,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>LIS;iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.6.0</Version>
+		<Version>0.6.1</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -27,22 +27,6 @@
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-	  <WarningLevel>7</WarningLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-	  <WarningLevel>7</WarningLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
-	  <WarningLevel>7</WarningLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
-	  <WarningLevel>7</WarningLevel>
-	</PropertyGroup>
-
 	<ItemGroup>
 	  <Content Include="event-model.ico" />
 	</ItemGroup>
@@ -52,8 +36,15 @@
     <None Include="Assets\readme.md" Pack="True" PackagePath="\" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!-- Dependencies for net7.0 and earlier -->
+  <ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
+
+  <!-- Dependencies for .net9.0 -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
 
 </Project>

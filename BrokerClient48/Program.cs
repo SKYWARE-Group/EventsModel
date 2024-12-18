@@ -8,6 +8,7 @@ using Spectre.Console.Json;
 using System;
 using System.Text.Json;
 using System.IO;
+using Skyware.Lis.EventsModel;
 
 namespace BrokerClient48
 {
@@ -83,6 +84,9 @@ namespace BrokerClient48
                                 // Start connection
                                 connection.Start();
 
+                                // Base message (serialization test)
+                                BaseMessage baseMessage;
+
                                 // Send a message
                                 CheckIn checkIn = new CheckIn()
                                 {
@@ -93,9 +97,12 @@ namespace BrokerClient48
                                     OriginLocation = new Location() { Id = 5, Name = "Central lab", Code = "CNTR" },
                                     OriginUserId = Environment.UserName,
                                 };
+
+                                baseMessage = checkIn;
+
                                 ITextMessage msg = session.CreateTextMessage(JsonSerializer.Serialize(
-                                    checkIn,
-                                    checkIn.GetType(),
+                                    baseMessage,
+                                    baseMessage.GetType(),
                                     new JsonSerializerOptions() { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase, DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
                                 msg.NMSCorrelationID = Guid.NewGuid().ToString();
                                 msg.Properties["NMSXGroupID"] = "System";
