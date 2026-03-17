@@ -32,4 +32,19 @@ public class Examination
     /// </summary>
     public string EventType { get; set; }
 
+    /// <summary>
+    /// Gets or sets the result of the examination.
+    /// </summary>
+    public string Result { get; set; }
+
+    /// <summary>
+    /// Flag of the of the examination.
+    /// </summary>
+    public byte? Flag { get; set; } = default;
+
+    /// <summary>
+    /// Gets or sets the identifier for the test. 
+    /// </summary>
+    public int? TestId { get; set; } = default;
+
 }

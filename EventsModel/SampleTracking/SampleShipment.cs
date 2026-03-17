@@ -51,4 +51,34 @@ public class SampleShipment : BaseMessage
     /// </summary>
     public IEnumerable<Sample> Samples { get; set; }
 
+    /// <summary>
+    /// Identifier of the courier responsible for the shipment
+    /// 
+    public int? CourierId { get; set; }
+
+    /// <summary>
+    /// Identifier of the carrier responsible for the shipment
+    /// </summary>
+    public int? CarrierId { get; set; }
+
+    /// <summary>
+    /// Employee of the carrier responsible for the shipment
+    /// </summary>
+    public string CarrierEmployee { get; set; }
+
+    /// <summary>
+    /// Reference to the document that initiated the shipment.
+    /// </summary>
+    public string DocumentRef { get; set; }
+
+    /// <summary>
+    /// Indicates whether the shipment is a draft
+    /// </summary>
+    public bool IsDraft { get; set; } = true;
+
+    /// <summary>
+    /// Indicates whether the shipment is completed
+    /// </summary>
+    public bool IsCompleted { get; set; } = false;
+
 }
