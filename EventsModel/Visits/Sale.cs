@@ -1,4 +1,5 @@
 ﻿using Skyware.Lis.EventsModel.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Skyware.Lis.EventsModel.Visits;
@@ -16,6 +17,11 @@ public class Sale : BaseMessage
     /// Identifier in LIS iLab.
     /// </summary>
     public int SaleId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the date created of the sale.
+    /// </summary>
+    public DateTime Created { get; set; } = DateTime.Now;
 
     /// <summary>
     /// Type of the event.
