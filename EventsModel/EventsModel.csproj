@@ -9,7 +9,7 @@
 		<Company>SKYWARE Group</Company>
 		<Product>LIS iLab</Product>
 		<Description>Data model of LIS iLab event system</Description>
-		<Copyright>Copyright (C) 2022-2024, SKYWARE Group</Copyright>
+		<Copyright>Copyright (C) 2022-2025, SKYWARE Group</Copyright>
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -36,14 +36,8 @@
     <None Include="Assets\readme.md" Pack="True" PackagePath="\" />
   </ItemGroup>
 
-  <!-- Dependencies for net7.0 and earlier -->
-  <ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <!-- Dependencies for .net9.0 -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
-    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="[9.0.0,)" />
   </ItemGroup>
 
 

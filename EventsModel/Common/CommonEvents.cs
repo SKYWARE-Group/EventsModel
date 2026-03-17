@@ -7,6 +7,11 @@ public class CommonEvents
 {
 
     /// <summary>
+    /// Object is not changed.
+    /// </summary>
+    public const string UNCHANGED = "Unchanged";
+
+    /// <summary>
     /// Object is created.
     /// </summary>
     public const string CREATED = "Created";
@@ -20,6 +25,5 @@ public class CommonEvents
     /// Object or its children is deleted.
     /// </summary>
     public const string DELETED = "Deleted";
-
 
 }

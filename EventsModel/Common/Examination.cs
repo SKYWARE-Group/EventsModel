@@ -30,6 +30,6 @@ public class Examination
     /// <summary>
     /// Type of the event.
     /// </summary>
-    public string EventType { get; set; }
+    public string EventType { get; set; } = CommonEvents.UNCHANGED;
 
 }

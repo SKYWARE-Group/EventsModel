@@ -20,7 +20,7 @@ public class Sale : BaseMessage
     /// <summary>
     /// Type of the event.
     /// </summary>
-    public string EventType { get; set; } = CommonEvents.CREATED;
+    public string EventType { get; set; } = CommonEvents.UNCHANGED;
 
     /// <summary>
     /// Sale schema of the sale.
