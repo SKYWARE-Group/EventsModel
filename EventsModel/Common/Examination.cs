@@ -30,6 +30,21 @@ public class Examination
     /// <summary>
     /// Type of the event.
     /// </summary>
-    public string EventType { get; set; }
+    public string EventType { get; set; } = CommonEvents.UNCHANGED;
+
+    /// <summary>
+    /// Gets or sets the result of the examination.
+    /// </summary>
+    public string Result { get; set; }
+
+    /// <summary>
+    /// Flag of the of the examination.
+    /// </summary>
+    public byte? Flag { get; set; } = default;
+
+    /// <summary>
+    /// Gets or sets the identifier for the test. 
+    /// </summary>
+    public int? TestId { get; set; } = default;
 
 }

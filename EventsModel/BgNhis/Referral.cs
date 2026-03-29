@@ -28,6 +28,11 @@ public class Referral
     public string Lrn { get; set; }
 
     /// <summary>
+    /// NRN of the encounter, to which referral is associated (null if referral is not associated with encounter).
+    /// </summary>
+    public string EncounterNrn { get; set; }
+
+    /// <summary>
     /// The Rila channel the referral is read, locked or unlocked (null if Arda is used)
     /// </summary>
     public int? RilaId { get; set; }

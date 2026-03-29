@@ -1,25 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net7.0;net8.0;net9.0</TargetFrameworks>
-    <LangVersion>13.0</LangVersion>
+		<TargetFrameworks>netstandard2.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Mikhail Kalatchev</Authors>
-		<PackageId>Skyware.Lis.$(AssemblyName)</PackageId>
+		<PackageId>Skyware.Lis.EventsModel</PackageId>
 		<Company>SKYWARE Group</Company>
 		<Product>LIS iLab</Product>
 		<Description>Data model of LIS iLab event system</Description>
-		<Copyright>Copyright (C) 2022-2024, SKYWARE Group</Copyright>
+		<Copyright>Copyright (C) 2022-2026, SKYWARE Group</Copyright>
 		<PackageProjectUrl>https://github.com/SKYWARE-Group/EventsModel</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>LIS;iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.6.1</Version>
+		<Version>0.7.0</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<RootNamespace>Skyware.Lis.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<RootNamespace>Skyware.Lis.EventsModel</RootNamespace>
+		<AssemblyName>Skyware.Lis.EventsModel</AssemblyName>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<AssemblyName>Skyware.Lis.$(MSBuildProjectName)</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>event-sys-icon.png</PackageIcon>
 		<Title>LIS iLab Events Data Model</Title>
@@ -28,23 +28,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="event-model.ico" />
+		<Content Include="event-model.ico" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Assets\event-sys-icon.png" Pack="true" PackagePath="" />
-    <None Include="Assets\readme.md" Pack="True" PackagePath="\" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Assets\event-sys-icon.png" Pack="true" PackagePath="\" />
+		<None Include="Assets\readme.md" Pack="True" PackagePath="\" />
+	</ItemGroup>
 
-  <!-- Dependencies for net7.0 and earlier -->
-  <ItemGroup Condition="'$(TargetFramework)' != 'net9.0'">
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-  </ItemGroup>
-
-  <!-- Dependencies for .net9.0 -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
-    <PackageReference Include="System.Text.Json" Version="9.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="[9.0.0,)" />
+	</ItemGroup>
 
 
 </Project>
