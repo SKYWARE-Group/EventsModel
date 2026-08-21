@@ -11,7 +11,7 @@ public class InstrumentResults
 {
 
     /// <summary>
-    /// <see cref="Instrument"/> from which the results are received
+    /// <see cref="Instruments.Instrument"/> from which the results are received
     /// </summary>
     public Instrument Instrument { get; set; }
 

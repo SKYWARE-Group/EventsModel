@@ -4,7 +4,7 @@ namespace Skyware.Lis.EventsModel.Instruments;
 
 
 /// <summary>
-/// Represents sample in communication with the <see cref="Instrument"/>
+/// Represents sample in communication with the <see cref="Instrument"/>.
 /// </summary>
 public class Sample
 {

@@ -59,7 +59,7 @@
       "_appTitle": "Events Model",
       "_appName": "LIS iLab Events Model",
       "_appLogoPath": "images/event-sys-icon.png",
-      "_appFaviconPath": "images/favicon.svg",
+      "_appFaviconPath": "images/event-sys-icon.png",
       "_appFooter": "LIS iLab Events Model · Event contracts for connected laboratory systems",
       "_enableSearch": true,
       "_disableContribution": true

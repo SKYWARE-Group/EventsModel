@@ -4,33 +4,33 @@ namespace Skyware.Lis.EventsModel.Instruments;
 
 
 /// <summary>
-/// Represents examination result data
+/// Represents examination result data.
 /// </summary>
 public class ResultData
 {
 
     /// <summary>
-    /// Resolved <see cref="Test"/>
+    /// Resolved <see cref="Instruments.Test"/>.
     /// </summary>
     public Test Test { get; set; }
 
     /// <summary>
-    /// Textual result representation
+    /// Textual result representation.
     /// </summary>
     public string Result { get; set; }
 
     /// <summary>
-    /// Decimal value of the results, in case it is numeric value
+    /// Decimal value of the results, in case it is numeric value.
     /// </summary>
     public decimal? DecimalResult { get; set; }
 
     /// <summary>
-    /// Result flags
+    /// Result flags.
     /// </summary>
     public IEnumerable<Flag> InstrumentFlags { get; set; }
 
     /// <summary>
-    /// Value based (iLab) flag according to reference ranges (see iLab docs)
+    /// Value based (iLab) flag according to reference ranges (see iLab docs).
     /// </summary>
     public byte? Flag { get; set; }
 
