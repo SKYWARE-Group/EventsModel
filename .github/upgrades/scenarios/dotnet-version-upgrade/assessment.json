@@ -1,0 +1,144 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-08-21T03:34:12.2015349Z",
+  "analysisEndTime": "2026-08-21T03:34:13.9331008Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 2,
+      "incidents": 2,
+      "effort": 2
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 1,
+        "Optional": 1,
+        "Potential": 0,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 1,
+        "Project": 1
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "EventsModelDocs.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 2,
+      "properties": {
+        "appName": "EventsModelDocs",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net9.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 1,
+        "numberOfCodeFiles": 1,
+        "linesTotal": 2,
+        "linesOfCode": 2,
+        "totalApiScanned": 4,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "4ef903cc-d1aa-44bd-9210-d650ced07b80",
+          "ruleId": "NuGet.0005",
+          "projectPath": "EventsModelDocs.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "docfx.console, 2.59.4\n\nRecommendation:\n\nThe docfx.console package has been deprecated and superseded by the docfx .NET tool package.\nRemove docfx.console, and replace with new package docfx.console, 2.59.4",
+              "protected": "docfx.console, 2.59.4\n\nRecommendation:\n\nThe docfx.console package has been deprecated and superseded by the docfx .NET tool package.\nRemove docfx.console, and replace with new package docfx.console, 2.59.4"
+            },
+            "kind": "File",
+            "path": "EventsModelDocs.csproj",
+            "snippet": "docfx.console, 2.59.4\n\nRecommendation:\n\nThe docfx.console package has been deprecated and superseded by the docfx .NET tool package.\nRemove docfx.console, and replace with new package docfx.console, 2.59.4",
+            "protectedSnippet": "docfx.console, 2.59.4\n\nRecommendation:\n\nThe docfx.console package has been deprecated and superseded by the docfx .NET tool package.\nRemove docfx.console, and replace with new package docfx.console, 2.59.4",
+            "label": "docfx.console 2.59.4",
+            "properties": {
+              "PackageId": "docfx.console",
+              "PackageVersion": "2.59.4",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "4dfca616-40b8-4306-af54-ff223a5de93f",
+          "ruleId": "Project.0002",
+          "projectPath": "EventsModelDocs.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net9.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net9.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "EventsModelDocs.csproj",
+            "snippet": "Current target framework: net9.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net9.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net9.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0005": {
+      "id": "NuGet.0005",
+      "isFeature": false,
+      "description": "NuGet package is deprecated.\n\nGo to its documentation and if there is a guidance for replacement of functionality provided by this package.",
+      "label": "NuGet package is deprecated",
+      "severity": "Optional",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262531",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
