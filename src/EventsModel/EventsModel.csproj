@@ -1,9 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0;net9.0;net10.0</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		
+		<RootNamespace>Skyware.Lis.EventsModel</RootNamespace>
+		<AssemblyName>Skyware.Lis.EventsModel</AssemblyName>
+		<Version>0.7.0</Version>
+		
 		<Authors>Mikhail Kalatchev</Authors>
 		<PackageId>Skyware.Lis.EventsModel</PackageId>
 		<Company>SKYWARE Group</Company>
@@ -15,10 +20,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>LIS;iLab;ActiveMQ;Events</PackageTags>
 		<SignAssembly>False</SignAssembly>
-		<Version>0.7.0</Version>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<RootNamespace>Skyware.Lis.EventsModel</RootNamespace>
-		<AssemblyName>Skyware.Lis.EventsModel</AssemblyName>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageIcon>event-sys-icon.png</PackageIcon>
@@ -37,7 +39,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Text.Json" Version="[9.0.0,)" />
+		<PackageReference Include="System.Text.Json" Version="10.0.11" />
 	</ItemGroup>
 
 

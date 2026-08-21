@@ -1,5 +1,4 @@
 <Solution>
   <Project Path="src/EventsModel/EventsModel.csproj" />
   <Project Path="src/EventsModelDocs/EventsModelDocs.csproj" />
-  <Project Path="src/TestApp/TestApp.csproj" />
 </Solution>
