@@ -34,6 +34,13 @@
         "files": [
           "images/**"
         ]
+      },
+      {
+        "files": [
+          "event-sys-icon.png"
+        ],
+        "src": "../EventsModel/Assets",
+        "dest": "images"
       }
     ],
     "overwrite": [
@@ -49,7 +56,12 @@
     ],
     "dest": "_site",
     "globalMetadata": {
-      "_appTitle": "My App",
+      "_appTitle": "Events Model",
+      "_appName": "LIS iLab Events Model",
+      "_appLogoPath": "images/event-sys-icon.png",
+      "_appFaviconPath": "images/favicon.svg",
+      "_appFooter": "LIS iLab Events Model · Event contracts for connected laboratory systems",
+      "_enableSearch": true,
       "_disableContribution": true
     },
     "globalMetadataFiles": [],

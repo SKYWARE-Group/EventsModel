@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" role="img" aria-labelledby="title">
+  <title id="title">LIS iLab Events Model</title>
+  <defs><linearGradient id="brand" x1="5" y1="4" x2="39" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#7c8cff"/></linearGradient></defs>
+  <rect x="1" y="1" width="42" height="42" rx="13" fill="#101a31" stroke="#30405f"/>
+  <circle cx="14" cy="22" r="4" fill="url(#brand)"/><circle cx="30" cy="13" r="3" fill="url(#brand)"/><circle cx="30" cy="31" r="3" fill="url(#brand)"/>
+  <path d="M18 20.5 27 14M18 23.5l9 6" fill="none" stroke="url(#brand)" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
