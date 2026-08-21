@@ -2,8 +2,6 @@
 using System;
 using System.Text.Json.Serialization;
 
-// Ignore Spelling: ver
-
 namespace Skyware.Lis.EventsModel;
 
 /// <summary>

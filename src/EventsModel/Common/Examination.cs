@@ -47,4 +47,9 @@ public class Examination
     /// </summary>
     public int? TestId { get; set; } = default;
 
+    /// <summary>
+    /// Gets or sets the identifier for the panel.
+    /// </summary>
+    public int? PanelId { get; set; } = default;
+
 }
