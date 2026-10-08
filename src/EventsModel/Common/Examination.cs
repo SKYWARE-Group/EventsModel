@@ -48,8 +48,13 @@ public class Examination
     public int? TestId { get; set; } = default;
 
     /// <summary>
-    /// Gets or sets the identifier for the panel.
+    /// Gets or sets the identifier of the panel (profile) in LIS iLab, in case the examination is a panel.
     /// </summary>
     public int? PanelId { get; set; } = default;
+
+    /// <summary>
+    /// Gets or sets the identifier (<see cref="Id"/>) of the parent examination, in case this examination is a part of a panel.
+    /// </summary>
+    public int? ParentId { get; set; } = default;
 
 }

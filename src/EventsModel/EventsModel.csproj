@@ -7,7 +7,7 @@
 		
 		<RootNamespace>Skyware.Lis.EventsModel</RootNamespace>
 		<AssemblyName>Skyware.Lis.EventsModel</AssemblyName>
-		<Version>0.7.0</Version>
+		<Version>0.8.0</Version>
 		
 		<Authors>Mikhail Kalatchev</Authors>
 		<PackageId>Skyware.Lis.EventsModel</PackageId>

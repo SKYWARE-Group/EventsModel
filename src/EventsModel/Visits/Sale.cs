@@ -44,6 +44,14 @@ public class Sale : BaseMessage
     public Doctor Doctor { get; set; }
 
     /// <summary>
+    /// Collection of <see cref="Diagnosis"/>, associated with this visit.
+    /// </summary>
+    /// <remarks>
+    /// Always the complete current set: a diagnosis that is no longer listed has been removed from the visit.
+    /// </remarks>
+    public IEnumerable<Diagnosis> Diagnoses { get; set; }
+
+    /// <summary>
     /// Collection of <see cref="Examination"/> ordered in this visit.
     /// </summary>
     public IEnumerable<Examination> Examinations { get; set; }
