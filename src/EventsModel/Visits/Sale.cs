@@ -47,7 +47,8 @@ public class Sale : BaseMessage
     /// Collection of <see cref="Diagnosis"/>, associated with this visit.
     /// </summary>
     /// <remarks>
-    /// Always the complete current set: a diagnosis that is no longer listed has been removed from the visit.
+    /// Null when the producer of the message does not report diagnoses. Otherwise it is the complete current set
+    /// (empty when the visit has none): a diagnosis that is no longer listed has been removed from the visit.
     /// </remarks>
     public IEnumerable<Diagnosis> Diagnoses { get; set; }
 
