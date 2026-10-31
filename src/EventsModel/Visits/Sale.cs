@@ -34,6 +34,14 @@ public class Sale : BaseMessage
     public SaleSchema SaleSchema { get; set; }
 
     /// <summary>
+    /// Funds of the visit (Фонд/Клиника 1 and 2) after and before the operation, see <see cref="SaleFunding"/>.
+    /// </summary>
+    /// <remarks>
+    /// Null when the producer of the message does not report funds; it then says nothing about the funds of the visit.
+    /// </remarks>
+    public SaleFunding Funding { get; set; }
+
+    /// <summary>
     /// <see cref="Patient"/> of the visit.
     /// </summary>
     public Patient Patient { get; set; }

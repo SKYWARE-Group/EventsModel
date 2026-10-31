@@ -1,0 +1,85 @@
+name: Build & Publish NuGet
+
+# Publishes Skyware.Lis.EventsModel to nuget.org. Release: bump <Version> in src/EventsModel/EventsModel.csproj on
+# master, then push a matching tag vX.Y.Z. The push uses the repository secret NUGET_API_KEY (a nuget.org API key of
+# the SKYWARE-Group organization, scoped to push this package).
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    defaults:
+      run:
+        shell: pwsh
+
+    env:
+      PROJECT: src/EventsModel/EventsModel.csproj
+      PACKAGE_ID: Skyware.Lis.EventsModel
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Check the API key
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          if (-not $env:NUGET_API_KEY) { throw 'The repository secret NUGET_API_KEY is not set.' }
+
+      - name: Restore
+        run: dotnet restore $env:PROJECT
+
+      # <Version> in the project file is the single source of the version. A tag (v1.2.3) only triggers the
+      # release and must name that same version, so a tag on the wrong commit cannot publish under a wrong number.
+      - name: Resolve version
+        id: version
+        run: |
+          $version = (dotnet msbuild $env:PROJECT -getProperty:Version).Trim()
+          if ($LASTEXITCODE -ne 0 -or -not $version) { throw 'Could not read <Version> from the project file.' }
+          if ($env:GITHUB_REF -like 'refs/tags/v*' -and $env:GITHUB_REF_NAME.Substring(1) -ne $version) {
+            throw "Tag $env:GITHUB_REF_NAME does not match <Version> $version in $env:PROJECT."
+          }
+          "VERSION=$version" >> $env:GITHUB_OUTPUT
+          Write-Host "Package version: $version"
+
+      # nuget.org lists its versions publicly; a forgotten version bump fails here instead of at the push.
+      - name: Check the version is not published yet
+        run: |
+          $version = '${{ steps.version.outputs.VERSION }}'
+          $id = $env:PACKAGE_ID.ToLowerInvariant()
+          $published = @()
+          try {
+            $published = @((Invoke-RestMethod "https://api.nuget.org/v3-flatcontainer/$id/index.json").versions)
+          } catch {
+            Write-Host "::warning::Could not query nuget.org ($_); the push will reject a duplicate version."
+          }
+          if ($published -contains $version) {
+            throw "$env:PACKAGE_ID $version is already published. Bump <Version> in $env:PROJECT or push a new tag."
+          }
+          Write-Host "Published so far: $($published -join ', ')"
+
+      # GeneratePackageOnBuild in the project would pack inside the multi-target build before every framework is
+      # built (NU5026), so it is switched off for the explicit pack.
+      - name: Pack
+        run: dotnet pack $env:PROJECT -c Release --no-restore -o ./nupkg -p:ContinuousIntegrationBuild=true -p:GeneratePackageOnBuild=false
+
+      # pwsh does not expand a wildcard for a native command, so the package file is resolved first.
+      - name: Push to nuget.org
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          $package = Get-ChildItem ./nupkg -Filter "$env:PACKAGE_ID.*.nupkg" | Where-Object { $_.Name -notlike '*.snupkg' } | Select-Object -First 1
+          if (-not $package) { throw 'No package was produced.' }
+          dotnet nuget push $package.FullName --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json
+          if ($LASTEXITCODE -ne 0) { throw "dotnet nuget push failed with exit code $LASTEXITCODE." }
