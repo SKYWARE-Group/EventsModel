@@ -53,7 +53,7 @@ public class SampleShipment : BaseMessage
 
     /// <summary>
     /// Identifier of the courier responsible for the shipment
-    /// 
+    /// </summary>
     public int? CourierId { get; set; }
 
     /// <summary>

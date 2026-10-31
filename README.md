@@ -12,4 +12,7 @@ Install-Package Skyware.Lis.EventsModel
 
 ## Notes
 
+For documented JSON schemas, message discovery and JSON parsing, see
+[EventsModel.Meta](src/EventsModel.Meta/README.md).
+
 Typical connection URL is like `activemq:failover:ssl://some-host.com:61616?transport.acceptInvalidBrokerCert=true`. Also you will need username and password to acces the ActiveMQ server. 

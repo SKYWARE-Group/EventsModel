@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="src/EventsModel/EventsModel.csproj" />
+  <Project Path="src/EventsModel.Meta/EventsModel.Meta.csproj" />
   <Project Path="src/EventsModelDocs/EventsModelDocs.csproj" />
+  <Project Path="tests/EventsModel.Meta.Tests/EventsModel.Meta.Tests.csproj" />
 </Solution>
