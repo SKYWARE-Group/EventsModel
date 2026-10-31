@@ -10,8 +10,12 @@ using Json.Schema;
 
 namespace Skyware.Lis.EventsModel.Meta;
 
-/// <summary>Discovers messages, exports documented JSON schemas and recognizes/parses incoming JSON.</summary>
-/// <remarks>Uses the compiled model's serialization contract and embedded XML documentation. No MCP host is required.</remarks>
+/// <summary>
+/// Discovers messages, exports documented JSON schemas and recognizes/parses incoming JSON.
+/// </summary>
+/// <remarks>
+/// Uses the compiled model's serialization contract and embedded XML documentation. No MCP host is required.
+/// </remarks>
 public sealed class MessageCatalog
 {
     private const string ModelNamespace = "Skyware.Lis.EventsModel.";
@@ -24,7 +28,9 @@ public sealed class MessageCatalog
     private readonly int maxDepth;
     private readonly ConcurrentDictionary<Type, SchemaEntry> schemas = new();
 
-    /// <summary>Creates a reusable catalog; options are copied and cannot subsequently alter the catalog.</summary>
+    /// <summary>
+    /// Creates a reusable catalog; options are copied and cannot subsequently alter the catalog.
+    /// </summary>
     public MessageCatalog(MessageCatalogOptions? options = null)
     {
         options ??= new();
@@ -54,17 +60,27 @@ public sealed class MessageCatalog
             throw new ArgumentException("Discriminator conflicts with a model property.", nameof(options));
     }
 
-    /// <summary>Returns every concrete BaseMessage subtype, sorted by its namespace-qualified model ID.</summary>
+    /// <summary>
+    /// Returns every concrete BaseMessage subtype, sorted by its namespace-qualified model ID.
+    /// </summary>
     public IReadOnlyList<MessageTypeInfo> ListMessageTypes() => messageTypes.Select(DescribeType).ToArray();
 
-    /// <summary>Returns a standalone schema, descriptions and a synthetic example for a message type.</summary>
-    /// <param name="type">Relative model ID, full CLR name, or unambiguous simple name.</param>
+    /// <summary>
+    /// Returns a standalone schema, descriptions and a synthetic example for a message type.
+    /// </summary>
+    /// <param name="type">
+    /// Relative model ID, full CLR name, or unambiguous simple name.
+    /// </param>
     public MessageDescription DescribeMessage(string type) => Describe(ResolveMessageType(type));
 
-    /// <summary>Exports a standalone JSON Schema 2020-12 document for any public model object or enum.</summary>
+    /// <summary>
+    /// Exports a standalone JSON Schema 2020-12 document for any public model object or enum.
+    /// </summary>
     public JsonObject GetSchema<T>() => GetSchema(typeof(T));
 
-    /// <summary>Exports a standalone schema. Only types from the model assembly are accepted.</summary>
+    /// <summary>
+    /// Exports a standalone schema. Only types from the model assembly are accepted.
+    /// </summary>
     public JsonObject GetSchema(Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -73,11 +89,17 @@ public sealed class MessageCatalog
         return (JsonObject)GetEntry(type).Schema.DeepClone();
     }
 
-    /// <summary>Validates JSON and returns every compatible type with documentation; never ranks or guesses.</summary>
+    /// <summary>
+    /// Validates JSON and returns every compatible type with documentation; never ranks or guesses.
+    /// </summary>
     public MessageExplanation ExplainMessage(string json) => Explain(json, null);
 
-    /// <summary>Deserializes only when exactly one type is identified, or validates an explicitly supplied type.</summary>
-    /// <exception cref="MessageParseException">Invalid, unknown or ambiguous message.</exception>
+    /// <summary>
+    /// Deserializes only when exactly one type is identified, or validates an explicitly supplied type.
+    /// </summary>
+    /// <exception cref="MessageParseException">
+    /// Invalid, unknown or ambiguous message.
+    /// </exception>
     public BaseMessage ParseMessage(string json, string? type = null)
     {
         var explanation = Explain(json, type is null ? null : ResolveMessageType(type));
@@ -265,6 +287,4 @@ public sealed class MessageCatalog
         if (result.Details is not null)
             foreach (var child in result.Details) CollectErrors(child, type, errors);
     }
-
-    private sealed record SchemaEntry(JsonObject Schema, JsonSchema Validator);
 }

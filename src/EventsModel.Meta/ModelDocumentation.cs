@@ -4,10 +4,22 @@ using System.Xml.Linq;
 
 namespace Skyware.Lis.EventsModel.Meta;
 
+/// <summary>
+/// Reads the model's embedded compiler-generated XML documentation and renders it as plain text.
+/// </summary>
 internal sealed class ModelDocumentation
 {
+    /// <summary>
+    /// Documentation entries indexed by their compiler-generated member IDs.
+    /// </summary>
     private readonly Dictionary<string, XElement> members;
 
+    /// <summary>
+    /// Loads and indexes the embedded model documentation.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// The embedded documentation resource is missing.
+    /// </exception>
     public ModelDocumentation()
     {
         using var stream = typeof(ModelDocumentation).Assembly.GetManifestResourceStream(
@@ -17,6 +29,16 @@ internal sealed class ModelDocumentation
             .ToDictionary(x => (string)x.Attribute("name")!, StringComparer.Ordinal);
     }
 
+    /// <summary>
+    /// Renders the summary and remarks for a model type, field, or property, resolving supported inheritdoc references.
+    /// </summary>
+    /// <param name="member">
+    /// The reflected model member whose documentation is requested.
+    /// </param>
+    /// <returns>
+    /// The rendered description, or an empty string when no supported documentation is available.
+    /// Summary and remarks are separated by a blank line.
+    /// </returns>
     public string Describe(MemberInfo member)
     {
         var prefix = member is Type ? "T:" : member is FieldInfo ? "F:" : "P:";
@@ -41,6 +63,15 @@ internal sealed class ModelDocumentation
         return "";
     }
 
+    /// <summary>
+    /// Converts an XML documentation element to plain text, rendering references and normalizing whitespace.
+    /// </summary>
+    /// <param name="element">
+    /// The documentation element to render.
+    /// </param>
+    /// <returns>
+    /// The rendered text with surrounding whitespace removed.
+    /// </returns>
     private static string Render(XElement element)
     {
         string Walk(XNode node) => node switch
@@ -56,6 +87,15 @@ internal sealed class ModelDocumentation
         return Regex.Replace(string.Concat(element.Nodes().Select(Walk)), @"\s+", " ").Trim();
     }
 
+    /// <summary>
+    /// Converts a compiler-generated reference ID to a readable name relative to the model namespace.
+    /// </summary>
+    /// <param name="value">
+    /// The reference ID, or null when no reference is present.
+    /// </param>
+    /// <returns>
+    /// The readable reference name, or null when the input is null.
+    /// </returns>
     private static string? Reference(string? value) => value is null ? null
         : value[(value.IndexOf(':') + 1)..].Replace("Skyware.Lis.EventsModel.", "", StringComparison.Ordinal);
 }
