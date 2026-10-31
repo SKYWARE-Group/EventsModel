@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: bg
-
-using Skyware.Lis.EventsModel.Common;
+﻿using Skyware.Lis.EventsModel.Common;
 
 namespace Skyware.Lis.EventsModel.BgNhis;
 

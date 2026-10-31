@@ -1,6 +1,4 @@
-﻿// Ignore Spelling: bg uin
-
-namespace Skyware.Lis.EventsModel.BgNhis;
+﻿namespace Skyware.Lis.EventsModel.BgNhis;
 
 /// <summary>
 /// Represent attempt for creation of session in NHIS
