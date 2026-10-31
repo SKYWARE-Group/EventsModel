@@ -29,10 +29,10 @@ jobs:
     - name: Dotnet Setup
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 9.x
+        dotnet-version: 10.x
 
     - run: dotnet tool update -g docfx
-    - run: docfx EventsModelDocs/docfx.json
+    - run: docfx src/EventsModelDocs/docfx.json
 
     - name: Setup Pages
       uses: actions/configure-pages@v3
@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         # Upload entire repository
-        path: 'EventsModelDocs/_site'
+        path: 'src/EventsModelDocs/_site'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
