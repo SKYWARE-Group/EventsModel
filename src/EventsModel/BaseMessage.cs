@@ -21,6 +21,7 @@ namespace Skyware.Lis.EventsModel;
 [JsonDerivedType(typeof(BgNra.InsuranceCheck))]
 [JsonDerivedType(typeof(BgNhis.ReferralAction))]
 [JsonDerivedType(typeof(BgNhis.Session))]
+[JsonDerivedType(typeof(Catalog.EntryChange))]
 public abstract class BaseMessage
 {
 

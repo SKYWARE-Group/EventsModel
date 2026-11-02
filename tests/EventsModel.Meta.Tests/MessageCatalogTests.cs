@@ -20,7 +20,7 @@ public class MessageCatalogTests
         var expected = typeof(BaseMessage).Assembly.GetExportedTypes()
             .Where(t => !t.IsAbstract && typeof(BaseMessage).IsAssignableFrom(t)).Select(t => t.FullName).Order().ToArray();
         Assert.Equal(expected, types.Select(t => t.ClrType).Order().ToArray());
-        Assert.Equal(14, types.Count);
+        Assert.Equal(15, types.Count);
         Assert.All(types, t => { Assert.NotEmpty(t.Description); Assert.StartsWith("topic://", t.DefaultAddress); });
     }
 
@@ -124,7 +124,7 @@ public class MessageCatalogTests
     {
         var result = catalog.ExplainMessage(json);
         Assert.Equal(MessageMatchStatus.Ambiguous, result.Status);
-        Assert.Equal(14, result.Candidates.Count);
+        Assert.Equal(15, result.Candidates.Count);
     }
 
     [Theory]

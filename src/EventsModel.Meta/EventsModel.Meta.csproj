@@ -1,36 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RootNamespace>Skyware.Lis.EventsModel.Meta</RootNamespace>
-    <AssemblyName>Skyware.Lis.EventsModel.Meta</AssemblyName>
-    <PackageId>Skyware.Lis.EventsModel.Meta</PackageId>
-    <Version>0.9.0</Version>
-    <Description>Documented JSON schemas, message discovery and parsing for LIS iLab events.</Description>
-    <Authors>Mikhail Kalatchev</Authors>
-    <Company>SKYWARE Group</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="../EventsModel/EventsModel.csproj" />
-    <PackageReference Include="System.Text.Json" Version="10.0.11" />
-    <PackageReference Include="JsonSchema.Net" Version="9.6.0" />
-    <None Include="README.md" Pack="true" PackagePath="/" />
-  </ItemGroup>
-  <!-- Embed the compiler-produced model documentation. Consumers need no source tree or sidecar XML. -->
-  <Target Name="EmbedModelDocumentation" BeforeTargets="AssignTargetPaths" DependsOnTargets="ResolveProjectReferences"
-          Condition="'$(TargetFramework)' != '' and '$(NoBuild)' != 'true' and '$(DesignTimeBuild)' != 'true'">
-    <MSBuild Projects="../EventsModel/EventsModel.csproj" Targets="GetTargetPath"
-             Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework)">
-      <Output TaskParameter="TargetOutputs" ItemName="_ModelAssembly" />
-    </MSBuild>
-    <ItemGroup>
-      <EmbeddedResource Include="@(_ModelAssembly->'%(RootDir)%(Directory)Skyware.Lis.EventsModel.xml')"
-                        LogicalName="Skyware.Lis.EventsModel.Meta.ModelDocumentation.xml" />
-    </ItemGroup>
-  </Target>
+	
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Skyware.Lis.EventsModel.Meta</RootNamespace>
+		<AssemblyName>Skyware.Lis.EventsModel.Meta</AssemblyName>
+		<PackageId>Skyware.Lis.EventsModel.Meta</PackageId>
+		<Version>0.9.1</Version>
+		<Description>Documented JSON schemas, message discovery and parsing for LIS iLab events.</Description>
+		<Authors>Mikhail Kalatchev</Authors>
+		<Company>SKYWARE Group</Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/SKYWARE-Group/EventsModel</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="../EventsModel/EventsModel.csproj" />
+		<PackageReference Include="System.Text.Json" Version="10.0.11" />
+		<PackageReference Include="JsonSchema.Net" Version="9.6.0" />
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+	
+	<!-- Embed the compiler-produced model documentation. Consumers need no source tree or sidecar XML. -->
+	<Target Name="EmbedModelDocumentation" BeforeTargets="AssignTargetPaths" DependsOnTargets="ResolveProjectReferences"
+			Condition="'$(TargetFramework)' != '' and '$(NoBuild)' != 'true' and '$(DesignTimeBuild)' != 'true'">
+		<MSBuild Projects="../EventsModel/EventsModel.csproj" Targets="GetTargetPath"
+				 Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework)">
+			<Output TaskParameter="TargetOutputs" ItemName="_ModelAssembly" />
+		</MSBuild>
+		<ItemGroup>
+			<EmbeddedResource Include="@(_ModelAssembly->'%(RootDir)%(Directory)Skyware.Lis.EventsModel.xml')"
+							  LogicalName="Skyware.Lis.EventsModel.Meta.ModelDocumentation.xml" />
+		</ItemGroup>
+	</Target>
+	
 </Project>
