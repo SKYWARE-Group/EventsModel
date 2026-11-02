@@ -1,8 +1,8 @@
 name: Build & Publish NuGet
 
 # Publishes Skyware.Lis.EventsModel to nuget.org. Release: bump <Version> in src/EventsModel/EventsModel.csproj on
-# master, then push a matching tag vX.Y.Z. The push uses the repository secret NUGET_API_KEY (a nuget.org API key of
-# the SKYWARE-Group organization, scoped to push this package).
+# master, then push a matching tag vX.Y.Z. NuGet Trusted Publishing authorizes this workflow for
+# Skyware.Lis.EventsModel under SKYWARE-Group; NuGet/login obtains a short-lived key through GitHub OIDC.
 on:
   push:
     tags:
@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write
 
     defaults:
       run:
@@ -30,12 +31,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-
-      - name: Check the API key
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: |
-          if (-not $env:NUGET_API_KEY) { throw 'The repository secret NUGET_API_KEY is not set.' }
 
       - name: Restore
         run: dotnet restore $env:PROJECT
@@ -74,10 +69,16 @@ jobs:
       - name: Pack
         run: dotnet pack $env:PROJECT -c Release --no-restore -o ./nupkg -p:ContinuousIntegrationBuild=true -p:GeneratePackageOnBuild=false
 
+      - name: NuGet login (Trusted Publishing)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: kalatchev
+
       # pwsh does not expand a wildcard for a native command, so the package file is resolved first.
       - name: Push to nuget.org
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
         run: |
           $package = Get-ChildItem ./nupkg -Filter "$env:PACKAGE_ID.*.nupkg" | Where-Object { $_.Name -notlike '*.snupkg' } | Select-Object -First 1
           if (-not $package) { throw 'No package was produced.' }

@@ -1,18 +1,53 @@
 # <img src="docs/assets/event-sys-icon.png" height="26"> LIS iLab Events Data Model
 
-[LIS iLab](https://ilab.skyware-group.com/) allows you event-driven integrations, workers, etc. Currently, LIS iLab uses [ActiveMQ Artemis](https://activemq.apache.org/components/artemis/) as a message broker. The messages are JSON serialized objecst which representing different events. Current project is the data model used by different modules of LIS iLab. Note that every massage type inherits `BaseMessage` (abstract class), which has property `DeafultAddress` . This is the address (in term of ActiveMQ borker) where you can expect such an object.
+[LIS iLab](https://ilab.skyware-group.com/) allows you event-driven integrations, workers, etc. Currently, LIS iLab uses [ActiveMQ Artemis](https://activemq.apache.org/components/artemis/) as a message broker. The messages are JSON serialized objecst which representing different events. Current project is the data model used by different modules of LIS iLab. 
 
 ## Usage 
 
-The easiest way is to get the library trough [NuGet package](https://www.nuget.org/packages/Skyware.Lis.EventsModel) like tnat:
+![Nuget](https://img.shields.io/nuget/v/Skyware.Lis.EventsModel?logo=nuget&label=Skyware.Lis.EventsModel&color=rgb(0%2C%20204%2C%200))
 
-`
+The easiest way is to get and use the library in your project is with [NuGet package](https://www.nuget.org/packages/Skyware.Lis.EventsModel) like tnat:
+
+```
 Install-Package Skyware.Lis.EventsModel
-`
+```
 
-## Notes
+## Documentation
+
+Read the documentaion and see the object model on [this site](https://skyware-group.github.io/EventsModel/articles/getting-started.html).
 
 For documented JSON schemas, message discovery and JSON parsing, see
 [EventsModel.Meta](src/EventsModel.Meta/README.md).
 
 Typical connection URL is like `activemq:failover:ssl://some-host.com:61616?transport.acceptInvalidBrokerCert=true`. Also you will need username and password to acces the ActiveMQ server. 
+
+## End to end example
+
+You could use example code in [TestApp](TestApp/Program.cs) for fast project bootstrap. This application uses [Apache.NMS](https://activemq.apache.org/components/nms/) client library
+(AMQP 1.0 protocol) which you could include in your project with [NuGet package](https://www.nuget.org/packages/Apache.NMS.ActiveMQ).
+
+```
+Install-Package Apache.NMS.ActiveMQ
+```
+## Other use cases
+
+Usually you will be able to use other protocols, such as MQTT (see [client](https://github.com/dotnet/MQTTnet)). If you nedd web browser aproach,
+then we recomment [STOMP over SockJS](https://stomp-js.github.io/guide/stompjs/rx-stomp/using-stomp-with-sockjs.html).
+
+## Tools
+
+You could use [JMS Toolbox](https://github.com/jmstoolbox/jmstoolbox) with example settings:
+
+<img src="https://github.com/SKYWARE-Group/EventsModel/assets/10154711/a5ab3a4b-1c51-4095-bbfa-ab3015c5dc2c" width="450"/>
+
+<img src="https://github.com/SKYWARE-Group/EventsModel/assets/10154711/bb8c5cd8-d589-4b14-881a-c053e681d246" width="450"/>
+
+When self-signed certiciate is used, use `sslEnabled=true;trustAll=true` in `z_ExtraNettyProperties`.
+
+
+## Feedback
+
+Please, use issues in this repo as a first step for getting support from us
+
+----
+&copy; 2022-2023, SKYWARE Group

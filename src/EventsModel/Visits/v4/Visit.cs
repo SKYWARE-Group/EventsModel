@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Skyware.Lis.EventsModel.Visits.v4;
 
-
 /// <summary>
 /// Represent a simple visit of the <see cref="Patient"/> in the laboratory
 /// </summary>
