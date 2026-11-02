@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 
-// Ignore Spelling: nrn lrn
-
 namespace Skyware.Lis.EventsModel.BgNhis;
 
 /// <summary>

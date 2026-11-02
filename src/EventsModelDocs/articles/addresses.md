@@ -20,6 +20,20 @@ The `ResultsSet` event occurs when one or more results are modified or deleted.
 | Events | One or more Visit's results are changed |
 | Applications | iLab |
 
+## Catalog
+
+### Entry Change
+The `EntryChange` event occurs when reference data (a catalog entry such as a test, a sample type or a doctor) is created,
+changed or deleted. It names the table, the LIS Model type and the key of the entry, without property values, so that
+applications caching LIS data know what to refresh. Without a key, the whole table may have changed.
+
+| Key | Value |
+|:--- |:--- |
+| Address | `topic://catalog/entry` |
+| Object | `Skyware.Lis.EventsModel.Catalog.EntryChange` |
+| Events | Created, Updated, Deleted (see `CommonEvents`) |
+| Applications | LisAdmin |
+
 ## Instruments
 
 ### Query

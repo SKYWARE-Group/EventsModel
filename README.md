@@ -16,6 +16,11 @@ Install-Package Skyware.Lis.EventsModel
 
 Read the documentaion and see the object model on [this site](https://skyware-group.github.io/EventsModel/articles/getting-started.html).
 
+For documented JSON schemas, message discovery and JSON parsing, see
+[EventsModel.Meta](src/EventsModel.Meta/README.md).
+
+Typical connection URL is like `activemq:failover:ssl://some-host.com:61616?transport.acceptInvalidBrokerCert=true`. Also you will need username and password to acces the ActiveMQ server. 
+
 ## End to end example
 
 You could use example code in [TestApp](TestApp/Program.cs) for fast project bootstrap. This application uses [Apache.NMS](https://activemq.apache.org/components/nms/) client library
